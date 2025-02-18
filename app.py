@@ -26,7 +26,6 @@ def optimize():
         data = request.json
         postal_codes = data['postal_codes'].split('\n')
         postal_codes = [code.strip() for code in postal_codes if code.strip()]
-        postal_codes = list(dict.fromkeys(postal_codes))  # Remove duplicates
         
         num_groups = int(data['num_groups'])
         start_postal = data['start_postal'].strip()

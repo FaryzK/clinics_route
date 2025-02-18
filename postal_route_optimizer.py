@@ -208,19 +208,24 @@ class PostalRouteOptimizer:
     def get_coordinates(self, postal_codes):
         """Get coordinates for all postal codes"""
         coordinates = []
-        for code in postal_codes:
+        # Keep track of indices to maintain duplicates
+        postal_indices = []
+        
+        for i, code in enumerate(postal_codes):
             if code not in self.coord_cache:
                 coords = self.geocode_postal(code)
                 if coords:
                     self.coord_cache[code] = coords
             if code in self.coord_cache:
                 coordinates.append(self.coord_cache[code])
-        return np.array(coordinates)
+                postal_indices.append(i)  # Store original index
+            
+        return np.array(coordinates), postal_indices
 
     def cluster_postal_codes(self):
         """Cluster postal codes using K-means"""
         # Get coordinates for clustering
-        coords = self.get_coordinates(self.postal_codes)
+        coords, postal_indices = self.get_coordinates(self.postal_codes)
         
         if len(coords) < self.num_groups:
             return {0: self.postal_codes}  # Return single cluster if too few points
@@ -229,10 +234,10 @@ class PostalRouteOptimizer:
         kmeans = KMeans(n_clusters=self.num_groups, random_state=42)
         cluster_labels = kmeans.fit_predict(coords)
         
-        # Group postal codes by cluster
+        # Group postal codes by cluster, maintaining duplicates
         clusters = defaultdict(list)
-        for postal_code, label in zip(self.postal_codes, cluster_labels):
-            clusters[label].append(postal_code)
+        for idx, label in zip(postal_indices, cluster_labels):
+            clusters[label].append(self.postal_codes[idx])
             
         return clusters
 
