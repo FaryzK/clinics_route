@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_9996236f088867dace4a20ff702df1b3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_9996236f088867dace4a20ff702df1b3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_9996236f088867dace4a20ff702df1b3 = L.map(
+                "map_9996236f088867dace4a20ff702df1b3",
+                {
+                    center: [1.31773583232805, 103.778554439278],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_873fc0c2a6793289536f5180704ee157 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_873fc0c2a6793289536f5180704ee157.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var marker_fd7c7738105d78fd88901a2d16721cbb = L.marker(
+                [1.31773583232805, 103.778554439278],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_dbf9d3cb3d3f288b38fc87a7da156582 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_fd7c7738105d78fd88901a2d16721cbb.setIcon(icon_dbf9d3cb3d3f288b38fc87a7da156582);
+        
+    
+        var popup_3087d2d493643e322b4ee5fba0566ff9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_79ec0283044217752d79750d1ea01703 = $(`<div id="html_79ec0283044217752d79750d1ea01703" style="width: 100.0%; height: 100.0%;">Start: 276692</div>`)[0];
+                popup_3087d2d493643e322b4ee5fba0566ff9.setContent(html_79ec0283044217752d79750d1ea01703);
+            
+        
+
+        marker_fd7c7738105d78fd88901a2d16721cbb.bindPopup(popup_3087d2d493643e322b4ee5fba0566ff9)
+        ;
+
+        
+    
+    
+            marker_fd7c7738105d78fd88901a2d16721cbb.bindTooltip(
+                `<div>
+                     Start: 276692
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ad0fb2d7f78f2fcb6c10e9f823be6d0b = L.marker(
+                [1.32042967079118, 103.843892122244],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_db68d2c88fa93e44dea34f0fe6a7a930 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ad0fb2d7f78f2fcb6c10e9f823be6d0b.setIcon(icon_db68d2c88fa93e44dea34f0fe6a7a930);
+        
+    
+        var popup_910b40723d2e268fd6509a6f48a60358 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e18bd6871690ab4d5bc7581c2b57fce = $(`<div id="html_4e18bd6871690ab4d5bc7581c2b57fce" style="width: 100.0%; height: 100.0%;">Stop 1: 307506</div>`)[0];
+                popup_910b40723d2e268fd6509a6f48a60358.setContent(html_4e18bd6871690ab4d5bc7581c2b57fce);
+            
+        
+
+        marker_ad0fb2d7f78f2fcb6c10e9f823be6d0b.bindPopup(popup_910b40723d2e268fd6509a6f48a60358)
+        ;
+
+        
+    
+    
+            marker_ad0fb2d7f78f2fcb6c10e9f823be6d0b.bindTooltip(
+                `<div>
+                     Stop 1: 307506
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0002fc9cc84ab08829f69ae3f8a34c46 = L.marker(
+                [1.34205287411841, 103.84939599719],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_29a0dd618e1ab6f4f729ede10fe45657 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0002fc9cc84ab08829f69ae3f8a34c46.setIcon(icon_29a0dd618e1ab6f4f729ede10fe45657);
+        
+    
+        var popup_87f933589a8e4638d5d85d13b4e06e67 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b1420c4569b0f8ca5f5968f83e642fed = $(`<div id="html_b1420c4569b0f8ca5f5968f83e642fed" style="width: 100.0%; height: 100.0%;">Stop 2: 310203</div>`)[0];
+                popup_87f933589a8e4638d5d85d13b4e06e67.setContent(html_b1420c4569b0f8ca5f5968f83e642fed);
+            
+        
+
+        marker_0002fc9cc84ab08829f69ae3f8a34c46.bindPopup(popup_87f933589a8e4638d5d85d13b4e06e67)
+        ;
+
+        
+    
+    
+            marker_0002fc9cc84ab08829f69ae3f8a34c46.bindTooltip(
+                `<div>
+                     Stop 2: 310203
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_9912373529f74c9c7975d971e1189d82 = L.marker(
+                [1.33828365922679, 103.858467966719],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_a451f9b4ebb540864c9b76509a16eb9f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_9912373529f74c9c7975d971e1189d82.setIcon(icon_a451f9b4ebb540864c9b76509a16eb9f);
+        
+    
+        var popup_e04c0942edcfeed4920169836a80aa7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_896dc10eeb03cac72838148317c14c3e = $(`<div id="html_896dc10eeb03cac72838148317c14c3e" style="width: 100.0%; height: 100.0%;">Stop 3: 310233</div>`)[0];
+                popup_e04c0942edcfeed4920169836a80aa7f.setContent(html_896dc10eeb03cac72838148317c14c3e);
+            
+        
+
+        marker_9912373529f74c9c7975d971e1189d82.bindPopup(popup_e04c0942edcfeed4920169836a80aa7f)
+        ;
+
+        
+    
+    
+            marker_9912373529f74c9c7975d971e1189d82.bindTooltip(
+                `<div>
+                     Stop 3: 310233
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_736b71c197a040598241490ea3b12bb4 = L.marker(
+                [1.32057156550961, 103.843219261065],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_6010934ebcfe37d85982b5292c691e75 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_736b71c197a040598241490ea3b12bb4.setIcon(icon_6010934ebcfe37d85982b5292c691e75);
+        
+    
+        var popup_8ac1b64138606e14b9a29920d0c78090 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_74cb69a271f7bcd06215c9f1706ca3dc = $(`<div id="html_74cb69a271f7bcd06215c9f1706ca3dc" style="width: 100.0%; height: 100.0%;">Stop 4: 329566</div>`)[0];
+                popup_8ac1b64138606e14b9a29920d0c78090.setContent(html_74cb69a271f7bcd06215c9f1706ca3dc);
+            
+        
+
+        marker_736b71c197a040598241490ea3b12bb4.bindPopup(popup_8ac1b64138606e14b9a29920d0c78090)
+        ;
+
+        
+    
+    
+            marker_736b71c197a040598241490ea3b12bb4.bindTooltip(
+                `<div>
+                     Stop 4: 329566
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_17ba97ed3e71c6919eaf172a31e1fe96 = L.marker(
+                [1.30370452023703, 103.833200970183],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_48a2fffdc46ccb5693ae335c1f6fc393 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_17ba97ed3e71c6919eaf172a31e1fe96.setIcon(icon_48a2fffdc46ccb5693ae335c1f6fc393);
+        
+    
+        var popup_98e91037f38602381bb9c4bb8c937ffe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_84130dd49a716a36f1a75e5ccb317578 = $(`<div id="html_84130dd49a716a36f1a75e5ccb317578" style="width: 100.0%; height: 100.0%;">Stop 5: 238877</div>`)[0];
+                popup_98e91037f38602381bb9c4bb8c937ffe.setContent(html_84130dd49a716a36f1a75e5ccb317578);
+            
+        
+
+        marker_17ba97ed3e71c6919eaf172a31e1fe96.bindPopup(popup_98e91037f38602381bb9c4bb8c937ffe)
+        ;
+
+        
+    
+    
+            marker_17ba97ed3e71c6919eaf172a31e1fe96.bindTooltip(
+                `<div>
+                     Stop 5: 238877
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cabdc11e2e1bd0835003282a79a1c0bc = L.marker(
+                [1.30139880165788, 103.83735915836],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_c1470609bc5e504b7441241d0c98e20e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_cabdc11e2e1bd0835003282a79a1c0bc.setIcon(icon_c1470609bc5e504b7441241d0c98e20e);
+        
+    
+        var popup_6f5a69cb5220771ccf82766c96d59530 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6c954788a616922add26644686fae11 = $(`<div id="html_b6c954788a616922add26644686fae11" style="width: 100.0%; height: 100.0%;">Stop 6: 239693</div>`)[0];
+                popup_6f5a69cb5220771ccf82766c96d59530.setContent(html_b6c954788a616922add26644686fae11);
+            
+        
+
+        marker_cabdc11e2e1bd0835003282a79a1c0bc.bindPopup(popup_6f5a69cb5220771ccf82766c96d59530)
+        ;
+
+        
+    
+    
+            marker_cabdc11e2e1bd0835003282a79a1c0bc.bindTooltip(
+                `<div>
+                     Stop 6: 239693
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_efd838301013bc78f8c8bca74635cd84 = L.marker(
+                [1.30540799634699, 103.835473484406],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_0337242f7e8cde161cbbe5ae2f81fc8b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_efd838301013bc78f8c8bca74635cd84.setIcon(icon_0337242f7e8cde161cbbe5ae2f81fc8b);
+        
+    
+        var popup_e1a827acc338bf69bd246a4fe248c582 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_75f3836b90b9dae9805ab0c0d1af780b = $(`<div id="html_75f3836b90b9dae9805ab0c0d1af780b" style="width: 100.0%; height: 100.0%;">Stop 7: 228510</div>`)[0];
+                popup_e1a827acc338bf69bd246a4fe248c582.setContent(html_75f3836b90b9dae9805ab0c0d1af780b);
+            
+        
+
+        marker_efd838301013bc78f8c8bca74635cd84.bindPopup(popup_e1a827acc338bf69bd246a4fe248c582)
+        ;
+
+        
+    
+    
+            marker_efd838301013bc78f8c8bca74635cd84.bindTooltip(
+                `<div>
+                     Stop 7: 228510
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_884ae7d97d28a2314897c620c5b7f351 = L.marker(
+                [1.30654704697701, 103.832128174215],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_bd65ff573e1c49d86f99f6b319ce99c9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_884ae7d97d28a2314897c620c5b7f351.setIcon(icon_bd65ff573e1c49d86f99f6b319ce99c9);
+        
+    
+        var popup_33ab01c34d6fe8ff30200fcfddf5a392 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_472d300da048c447b22bb6f9fc953a31 = $(`<div id="html_472d300da048c447b22bb6f9fc953a31" style="width: 100.0%; height: 100.0%;">Stop 8: 228210</div>`)[0];
+                popup_33ab01c34d6fe8ff30200fcfddf5a392.setContent(html_472d300da048c447b22bb6f9fc953a31);
+            
+        
+
+        marker_884ae7d97d28a2314897c620c5b7f351.bindPopup(popup_33ab01c34d6fe8ff30200fcfddf5a392)
+        ;
+
+        
+    
+    
+            marker_884ae7d97d28a2314897c620c5b7f351.bindTooltip(
+                `<div>
+                     Stop 8: 228210
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f3a1f494a5509fcead144e3bd75a2151 = L.marker(
+                [1.31247326486217, 103.853929522508],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_b966dd2e1ea8ccfeb809fff485daaf9c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_f3a1f494a5509fcead144e3bd75a2151.setIcon(icon_b966dd2e1ea8ccfeb809fff485daaf9c);
+        
+    
+        var popup_cac455ebb09b63b3f7c30e0630c16c49 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f4ea9758aac2e943abc5ebfb44b41239 = $(`<div id="html_f4ea9758aac2e943abc5ebfb44b41239" style="width: 100.0%; height: 100.0%;">Stop 9: 217562</div>`)[0];
+                popup_cac455ebb09b63b3f7c30e0630c16c49.setContent(html_f4ea9758aac2e943abc5ebfb44b41239);
+            
+        
+
+        marker_f3a1f494a5509fcead144e3bd75a2151.bindPopup(popup_cac455ebb09b63b3f7c30e0630c16c49)
+        ;
+
+        
+    
+    
+            marker_f3a1f494a5509fcead144e3bd75a2151.bindTooltip(
+                `<div>
+                     Stop 9: 217562
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b314f24530d19915f77aa06582aef704 = L.marker(
+                [1.30964598900104, 103.857821340639],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_b3836e8124df523b40b0a2b677544593 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_b314f24530d19915f77aa06582aef704.setIcon(icon_b3836e8124df523b40b0a2b677544593);
+        
+    
+        var popup_3e74d89c6798f3d2ac6d85108a45ee09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7954592659ad937c73f648abf5a5ba37 = $(`<div id="html_7954592659ad937c73f648abf5a5ba37" style="width: 100.0%; height: 100.0%;">Stop 10: 208909</div>`)[0];
+                popup_3e74d89c6798f3d2ac6d85108a45ee09.setContent(html_7954592659ad937c73f648abf5a5ba37);
+            
+        
+
+        marker_b314f24530d19915f77aa06582aef704.bindPopup(popup_3e74d89c6798f3d2ac6d85108a45ee09)
+        ;
+
+        
+    
+    
+            marker_b314f24530d19915f77aa06582aef704.bindTooltip(
+                `<div>
+                     Stop 10: 208909
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e1f074bb7d80f8adc8e31d9df84c6868 = L.marker(
+                [1.30097707763182, 103.860481763929],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_e55ed100af6b8ac8f7f88678a42bc00a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_e1f074bb7d80f8adc8e31d9df84c6868.setIcon(icon_e55ed100af6b8ac8f7f88678a42bc00a);
+        
+    
+        var popup_ab14e1ea9e3700a7dec2185496889c00 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fbd48634f3f60264638860ba048aec7e = $(`<div id="html_fbd48634f3f60264638860ba048aec7e" style="width: 100.0%; height: 100.0%;">Stop 11: 199551</div>`)[0];
+                popup_ab14e1ea9e3700a7dec2185496889c00.setContent(html_fbd48634f3f60264638860ba048aec7e);
+            
+        
+
+        marker_e1f074bb7d80f8adc8e31d9df84c6868.bindPopup(popup_ab14e1ea9e3700a7dec2185496889c00)
+        ;
+
+        
+    
+    
+            marker_e1f074bb7d80f8adc8e31d9df84c6868.bindTooltip(
+                `<div>
+                     Stop 11: 199551
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ff1932b128e0e51f91394823532435c8 = L.marker(
+                [1.27749904086527, 103.800215758536],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_93c97d18b3b5622f3e1f0e69b5536a66 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_ff1932b128e0e51f91394823532435c8.setIcon(icon_93c97d18b3b5622f3e1f0e69b5536a66);
+        
+    
+        var popup_028c0882f82e3d24d41db357f37e904e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b8ab577e25ca965673f90fcc4c3d043 = $(`<div id="html_1b8ab577e25ca965673f90fcc4c3d043" style="width: 100.0%; height: 100.0%;">Stop 12: 119976</div>`)[0];
+                popup_028c0882f82e3d24d41db357f37e904e.setContent(html_1b8ab577e25ca965673f90fcc4c3d043);
+            
+        
+
+        marker_ff1932b128e0e51f91394823532435c8.bindPopup(popup_028c0882f82e3d24d41db357f37e904e)
+        ;
+
+        
+    
+    
+            marker_ff1932b128e0e51f91394823532435c8.bindTooltip(
+                `<div>
+                     Stop 12: 119976
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_53c28fae85095f4f1317bf2399b1ee58 = L.marker(
+                [1.34149897479709, 103.837774442377],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_d8ca40e99ac0d747e0cb95db7efb07d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_53c28fae85095f4f1317bf2399b1ee58.setIcon(icon_d8ca40e99ac0d747e0cb95db7efb07d7);
+        
+    
+        var popup_efdf87ba6b833d4175fe60c0d26a8408 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_783ee60d99b071a38136776dc7cf73b7 = $(`<div id="html_783ee60d99b071a38136776dc7cf73b7" style="width: 100.0%; height: 100.0%;">Stop 13: 574623</div>`)[0];
+                popup_efdf87ba6b833d4175fe60c0d26a8408.setContent(html_783ee60d99b071a38136776dc7cf73b7);
+            
+        
+
+        marker_53c28fae85095f4f1317bf2399b1ee58.bindPopup(popup_efdf87ba6b833d4175fe60c0d26a8408)
+        ;
+
+        
+    
+    
+            marker_53c28fae85095f4f1317bf2399b1ee58.bindTooltip(
+                `<div>
+                     Stop 13: 574623
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5e0c32a4a0c7834cc2c270b94075b038 = L.marker(
+                [1.34149897479709, 103.837774442377],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_81b43ed35e389129d6984ac3fdef6756 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_5e0c32a4a0c7834cc2c270b94075b038.setIcon(icon_81b43ed35e389129d6984ac3fdef6756);
+        
+    
+        var popup_06860a7f8afa12b20b90b38b68fb1a7c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_942dc839c954e4c0bd2adaf3aa264904 = $(`<div id="html_942dc839c954e4c0bd2adaf3aa264904" style="width: 100.0%; height: 100.0%;">Stop 14: 574623</div>`)[0];
+                popup_06860a7f8afa12b20b90b38b68fb1a7c.setContent(html_942dc839c954e4c0bd2adaf3aa264904);
+            
+        
+
+        marker_5e0c32a4a0c7834cc2c270b94075b038.bindPopup(popup_06860a7f8afa12b20b90b38b68fb1a7c)
+        ;
+
+        
+    
+    
+            marker_5e0c32a4a0c7834cc2c270b94075b038.bindTooltip(
+                `<div>
+                     Stop 14: 574623
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0d149159391ff8016820555ab3133984 = L.marker(
+                [1.34862997302065, 103.84957198305],
+                {
+}
+            ).addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            var icon_f5ea0d45430e05eeec26930dc038946b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+            marker_0d149159391ff8016820555ab3133984.setIcon(icon_f5ea0d45430e05eeec26930dc038946b);
+        
+    
+        var popup_09e0b46948fe5ee2c7d4d0ff9388b3d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2aa6e2246376aef2fbf4e75fdd8c4940 = $(`<div id="html_2aa6e2246376aef2fbf4e75fdd8c4940" style="width: 100.0%; height: 100.0%;">Stop 15: 570509</div>`)[0];
+                popup_09e0b46948fe5ee2c7d4d0ff9388b3d5.setContent(html_2aa6e2246376aef2fbf4e75fdd8c4940);
+            
+        
+
+        marker_0d149159391ff8016820555ab3133984.bindPopup(popup_09e0b46948fe5ee2c7d4d0ff9388b3d5)
+        ;
+
+        
+    
+    
+            marker_0d149159391ff8016820555ab3133984.bindTooltip(
+                `<div>
+                     Stop 15: 570509
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+        function geo_json_6b780dac05f1570c396cab63f827cfac_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_6b780dac05f1570c396cab63f827cfac_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_6b780dac05f1570c396cab63f827cfac = L.geoJson(null, {
+                onEachFeature: geo_json_6b780dac05f1570c396cab63f827cfac_onEachFeature,
+            
+                style: geo_json_6b780dac05f1570c396cab63f827cfac_styler,
+            ...{
+}
+        });
+
+        function geo_json_6b780dac05f1570c396cab63f827cfac_add (data) {
+            geo_json_6b780dac05f1570c396cab63f827cfac
+                .addData(data);
+        }
+            geo_json_6b780dac05f1570c396cab63f827cfac_add({"bbox": [103.7713, 1.277451, 103.85099, 1.320712], "features": [{"bbox": [103.7713, 1.277451, 103.85099, 1.320712], "geometry": {"coordinates": [[103.778205, 1.31743], [103.778185, 1.317453], [103.778132, 1.31752], [103.777942, 1.317818], [103.777833, 1.317969], [103.77763, 1.317869], [103.777458, 1.317769], [103.777392, 1.317737], [103.777331, 1.317711], [103.77725, 1.317675], [103.777235, 1.317865], [103.777199, 1.318001], [103.777187, 1.318152], [103.777138, 1.318764], [103.777137, 1.319645], [103.777115, 1.31999], [103.777105, 1.320094], [103.776965, 1.320432], [103.776916, 1.32051], [103.776758, 1.320614], [103.776539, 1.320635], [103.77588, 1.320712], [103.77566, 1.3207], [103.775389, 1.320636], [103.774832, 1.320405], [103.774188, 1.320064], [103.773992, 1.319976], [103.773831, 1.319904], [103.773474, 1.319743], [103.772827, 1.319449], [103.772717, 1.319386], [103.772539, 1.319293], [103.772296, 1.319202], [103.772167, 1.319161], [103.771974, 1.31912], [103.771809, 1.319048], [103.77162, 1.31899], [103.771448, 1.31886], [103.771404, 1.318795], [103.771379, 1.318632], [103.77143, 1.31842], [103.771456, 1.318313], [103.771588, 1.318069], [103.771649, 1.317901], [103.771721, 1.317611], [103.771751, 1.317483], [103.771851, 1.317056], [103.771908, 1.316822], [103.772023, 1.316164], [103.772166, 1.31518], [103.772223, 1.314645], [103.772313, 1.313969], [103.772309, 1.313731], [103.772274, 1.313354], [103.772289, 1.313158], [103.7723, 1.313045], [103.772323, 1.312887], [103.772349, 1.312682], [103.77239, 1.312263], [103.772385, 1.312029], [103.772342, 1.311609], [103.772195, 1.310843], [103.77216, 1.310662], [103.772007, 1.309946], [103.771949, 1.309666], [103.771929, 1.309576], [103.771868, 1.30929], [103.771728, 1.308635], [103.771667, 1.308361], [103.771478, 1.307514], [103.771387, 1.306944], [103.771352, 1.306672], [103.771327, 1.306396], [103.771324, 1.306093], [103.771302, 1.305624], [103.7713, 1.305493], [103.771416, 1.305035], [103.771511, 1.304737], [103.771653, 1.304404], [103.771772, 1.30425], [103.771935, 1.304115], [103.773321, 1.303332], [103.773503, 1.303169], [103.774022, 1.30285], [103.776593, 1.301362], [103.777965, 1.300558], [103.778264, 1.30037], [103.778664, 1.300121], [103.778895, 1.299976], [103.780588, 1.298945], [103.781226, 1.298592], [103.781852, 1.298248], [103.782395, 1.297939], [103.783111, 1.29752], [103.783504, 1.297224], [103.784022, 1.296743], [103.784384, 1.296317], [103.78453, 1.296145], [103.78575, 1.294758], [103.786158, 1.294232], [103.786496, 1.293818], [103.787227, 1.293081], [103.787808, 1.292611], [103.788448, 1.292214], [103.790368, 1.291009], [103.792214, 1.2898], [103.792835, 1.289317], [103.793167, 1.289045], [103.793433, 1.288826], [103.794299, 1.288246], [103.794661, 1.288021], [103.795939, 1.287301], [103.796795, 1.286732], [103.797019, 1.28659], [103.797356, 1.286367], [103.797971, 1.285944], [103.798255, 1.28575], [103.799145, 1.285104], [103.799713, 1.284745], [103.800227, 1.284499], [103.800764, 1.284318], [103.80131, 1.284208], [103.802068, 1.284119], [103.807955, 1.283769], [103.808244, 1.283752], [103.810145, 1.283639], [103.810908, 1.283566], [103.811687, 1.283453], [103.812417, 1.283281], [103.813144, 1.283052], [103.813795, 1.282802], [103.814557, 1.282432], [103.81499, 1.282186], [103.815279, 1.282022], [103.817047, 1.280912], [103.817446, 1.28067], [103.818168, 1.280203], [103.818503, 1.280001], [103.818824, 1.279797], [103.819296, 1.279524], [103.820344, 1.279151], [103.820657, 1.279068], [103.821261, 1.278962], [103.821552, 1.278945], [103.822547, 1.27894], [103.823258, 1.278882], [103.823336, 1.278835], [103.823547, 1.278762], [103.823868, 1.278637], [103.824157, 1.278523], [103.824486, 1.278371], [103.825681, 1.277707], [103.825977, 1.277578], [103.826381, 1.277477], [103.826714, 1.277451], [103.827059, 1.277492], [103.827342, 1.277558], [103.827601, 1.277653], [103.827881, 1.277811], [103.828206, 1.278077], [103.828386, 1.278267], [103.828713, 1.278717], [103.829194, 1.27939], [103.829751, 1.280023], [103.830135, 1.280408], [103.830705, 1.280918], [103.831162, 1.281244], [103.831338, 1.281355], [103.832105, 1.281821], [103.832559, 1.282046], [103.833242, 1.282312], [103.833393, 1.282369], [103.834554, 1.282775], [103.835517, 1.283136], [103.835836, 1.283285], [103.836086, 1.283424], [103.83645, 1.283777], [103.8366, 1.283956], [103.836831, 1.284285], [103.83705, 1.284634], [103.83728, 1.285024], [103.837466, 1.285297], [103.837612, 1.285481], [103.837769, 1.285651], [103.837953, 1.28581], [103.838331, 1.286086], [103.839729, 1.286954], [103.839939, 1.287082], [103.840308, 1.287337], [103.840575, 1.287537], [103.840713, 1.287656], [103.840813, 1.287747], [103.841115, 1.288082], [103.841669, 1.288741], [103.842135, 1.289502], [103.842165, 1.289548], [103.842613, 1.290417], [103.843475, 1.292001], [103.844025, 1.293103], [103.844155, 1.293417], [103.844264, 1.293851], [103.844269, 1.294369], [103.844205, 1.294983], [103.843968, 1.295948], [103.843421, 1.297064], [103.843282, 1.29775], [103.843464, 1.299359], [103.843368, 1.300126], [103.843255, 1.300625], [103.843137, 1.300904], [103.842981, 1.301139], [103.842688, 1.301469], [103.842554, 1.301585], [103.841263, 1.30267], [103.841073, 1.302831], [103.840698, 1.303186], [103.840522, 1.303461], [103.84026, 1.303901], [103.840155, 1.304194], [103.840051, 1.304553], [103.839994, 1.304852], [103.839968, 1.305249], [103.839992, 1.305549], [103.840051, 1.305895], [103.840104, 1.306106], [103.840233, 1.306459], [103.840313, 1.306616], [103.840564, 1.307068], [103.840869, 1.307423], [103.841098, 1.307715], [103.84143, 1.30803], [103.841807, 1.308289], [103.842751, 1.308925], [103.842998, 1.30912], [103.843763, 1.309884], [103.843964, 1.310138], [103.844254, 1.310635], [103.844404, 1.310991], [103.844553, 1.311439], [103.844626, 1.311735], [103.844738, 1.312356], [103.844975, 1.313392], [103.845004, 1.313463], [103.845207, 1.313944], [103.845417, 1.314347], [103.845663, 1.31475], [103.845944, 1.315137], [103.846242, 1.315514], [103.846905, 1.316245], [103.847237, 1.316543], [103.847479, 1.316714], [103.847722, 1.316885], [103.84828, 1.317214], [103.848457, 1.317299], [103.849447, 1.317751], [103.850145, 1.31805], [103.8502, 1.318118], [103.850271, 1.318181], [103.850585, 1.318334], [103.850734, 1.318428], [103.850837, 1.318529], [103.85092, 1.318649], [103.85099, 1.319006], [103.850925, 1.319178], [103.85082, 1.319296], [103.85021, 1.319214], [103.849909, 1.31916], [103.849537, 1.319089], [103.849187, 1.319028], [103.848571, 1.318923], [103.848461, 1.318901], [103.84792, 1.318789], [103.847638, 1.31873], [103.847343, 1.318669], [103.847048, 1.318608], [103.846675, 1.318536], [103.84632, 1.318475], [103.846281, 1.318467], [103.845953, 1.318396], [103.845913, 1.318524], [103.845859, 1.318782], [103.845864, 1.318808], [103.845824, 1.319112], [103.845819, 1.319204], [103.845813, 1.319255], [103.845731, 1.31933], [103.845717, 1.319384], [103.845709, 1.319415], [103.845637, 1.31979], [103.845595, 1.319915], [103.845539, 1.320024], [103.845416, 1.320143], [103.845318, 1.320232], [103.845172, 1.320364], [103.844874, 1.320637], [103.844832, 1.3206], [103.844705, 1.320486], [103.844584, 1.320377], [103.84455, 1.320349], [103.844504, 1.320305], [103.84448, 1.320285], [103.844402, 1.320214], [103.844247, 1.320075], [103.844232, 1.320063], [103.844255, 1.320035], [103.84423, 1.320015], [103.844162, 1.320094], [103.844178, 1.320108]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 17036.6, "duration": 1572.8, "steps": [{"distance": 72.8, "duration": 10.5, "instruction": "Head northwest on Ridgewood Close", "name": "Ridgewood Close", "type": 11, "way_points": [0, 4]}, {"distance": 55.5, "duration": 8.0, "instruction": "Turn left onto Mount Sinai Drive", "name": "Mount Sinai Drive", "type": 0, "way_points": [4, 7]}, {"distance": 17.2, "duration": 2.5, "instruction": "Continue straight onto Mount Sinai Drive", "name": "Mount Sinai Drive", "type": 6, "way_points": [7, 9]}, {"distance": 270.0, "duration": 38.9, "instruction": "Turn sharp right onto Pandan Valley", "name": "Pandan Valley", "type": 3, "way_points": [9, 16]}, {"distance": 641.9, "duration": 81.9, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [16, 34]}, {"distance": 129.5, "duration": 30.3, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [34, 41]}, {"distance": 1449.5, "duration": 220.2, "instruction": "Keep left onto Clementi Road", "name": "Clementi Road", "type": 12, "way_points": [41, 75]}, {"distance": 6715.2, "duration": 370.7, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [75, 145]}, {"distance": 6537.2, "duration": 541.0, "instruction": "Keep right onto Ayer Rajah Expressway, CTE", "name": "Ayer Rajah Expressway, CTE", "type": 13, "way_points": [145, 255]}, {"distance": 151.4, "duration": 29.9, "instruction": "Keep left onto Central Expressway", "name": "Central Expressway", "type": 12, "way_points": [255, 262]}, {"distance": 38.1, "duration": 9.1, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [262, 264]}, {"distance": 550.4, "duration": 90.3, "instruction": "Turn left onto Moulmein Road", "name": "Moulmein Road", "type": 0, "way_points": [264, 278]}, {"distance": 290.6, "duration": 83.8, "instruction": "Turn right onto Sinaran Drive", "name": "Sinaran Drive", "type": 1, "way_points": [278, 294]}, {"distance": 93.7, "duration": 38.7, "instruction": "Turn left onto Sinaran Drive", "name": "Sinaran Drive", "type": 0, "way_points": [294, 302]}, {"distance": 6.0, "duration": 4.3, "instruction": "Continue straight", "name": "-", "type": 6, "way_points": [302, 304]}, {"distance": 17.5, "duration": 12.6, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [304, 307]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [307, 307]}]}], "summary": {"distance": 17036.6, "duration": 1572.8}, "way_points": [0, 307]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.778554439278, 1.31773583232805], [103.843892122244, 1.32042967079118]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886672618}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_6b780dac05f1570c396cab63f827cfac.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_1411e30d8737c9b58e433839f466e488_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_1411e30d8737c9b58e433839f466e488_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_1411e30d8737c9b58e433839f466e488 = L.geoJson(null, {
+                onEachFeature: geo_json_1411e30d8737c9b58e433839f466e488_onEachFeature,
+            
+                style: geo_json_1411e30d8737c9b58e433839f466e488_styler,
+            ...{
+}
+        });
+
+        function geo_json_1411e30d8737c9b58e433839f466e488_add (data) {
+            geo_json_1411e30d8737c9b58e433839f466e488
+                .addData(data);
+        }
+            geo_json_1411e30d8737c9b58e433839f466e488_add({"bbox": [103.844178, 1.318843, 103.862274, 1.343236], "features": [{"bbox": [103.844178, 1.318843, 103.862274, 1.343236], "geometry": {"coordinates": [[103.844178, 1.320108], [103.844203, 1.32013], [103.844389, 1.320298], [103.844435, 1.320341], [103.844448, 1.320354], [103.844495, 1.320399], [103.844554, 1.320454], [103.844813, 1.320698], [103.844873, 1.320757], [103.844933, 1.32069], [103.845131, 1.320509], [103.845227, 1.320418], [103.845309, 1.320336], [103.845569, 1.320077], [103.845634, 1.320003], [103.845714, 1.31991], [103.845729, 1.31987], [103.845811, 1.319522], [103.845839, 1.319334], [103.846022, 1.319337], [103.846493, 1.319337], [103.84668, 1.319332], [103.847271, 1.319338], [103.847479, 1.319067], [103.847587, 1.318871], [103.847788, 1.318913], [103.847935, 1.318943], [103.848112, 1.31898], [103.848434, 1.319047], [103.848539, 1.319067], [103.848971, 1.319139], [103.849814, 1.319282], [103.850125, 1.319337], [103.850649, 1.319417], [103.851006, 1.319421], [103.851145, 1.319424], [103.851124, 1.319288], [103.851121, 1.319239], [103.851145, 1.319145], [103.851174, 1.319096], [103.851313, 1.318939], [103.851472, 1.318855], [103.851556, 1.318843], [103.851639, 1.31885], [103.852179, 1.319032], [103.852486, 1.319145], [103.852689, 1.319175], [103.853248, 1.319452], [103.853699, 1.319699], [103.854148, 1.319968], [103.854669, 1.320315], [103.855128, 1.32068], [103.855516, 1.320964], [103.855919, 1.321327], [103.85633, 1.321766], [103.857135, 1.322705], [103.857564, 1.323228], [103.857806, 1.323502], [103.858015, 1.323745], [103.858064, 1.323794], [103.858386, 1.324079], [103.859543, 1.325154], [103.859842, 1.325418], [103.860086, 1.325645], [103.86023, 1.32578], [103.860764, 1.326268], [103.861186, 1.326763], [103.861526, 1.327257], [103.861779, 1.327749], [103.861864, 1.327951], [103.862132, 1.328708], [103.862218, 1.329131], [103.862272, 1.329453], [103.862274, 1.329817], [103.862263, 1.331959], [103.862198, 1.333058], [103.862141, 1.33419], [103.862123, 1.334442], [103.862097, 1.335014], [103.862105, 1.335535], [103.862063, 1.335634], [103.862034, 1.336163], [103.861933, 1.336396], [103.861813, 1.337013], [103.861796, 1.337441], [103.86172, 1.338044], [103.861634, 1.338349], [103.861558, 1.33884], [103.861506, 1.339232], [103.861416, 1.339647], [103.861335, 1.340024], [103.860957, 1.341019], [103.86074, 1.341528], [103.860459, 1.342099], [103.860311, 1.342392], [103.860188, 1.342625], [103.860055, 1.342821], [103.859905, 1.343001], [103.859796, 1.34309], [103.859705, 1.343145], [103.859542, 1.343196], [103.859369, 1.343215], [103.858516, 1.343212], [103.858267, 1.34321], [103.857982, 1.343218], [103.857872, 1.343236], [103.857784, 1.343236], [103.857695, 1.343235], [103.857387, 1.343226], [103.857098, 1.34319], [103.856881, 1.34318], [103.855664, 1.343162], [103.855124, 1.343135], [103.85467, 1.343107], [103.854382, 1.343038], [103.854079, 1.342929], [103.853956, 1.342815], [103.853839, 1.342548], [103.853777, 1.342291], [103.853737, 1.342075], [103.853631, 1.341507], [103.853553, 1.341225], [103.853461, 1.340999], [103.853419, 1.340882], [103.853337, 1.340684], [103.853298, 1.340528], [103.853276, 1.34048], [103.853147, 1.340185], [103.852743, 1.339474], [103.852459, 1.339123], [103.852386, 1.33904], [103.852276, 1.339152], [103.852005, 1.339387], [103.851749, 1.33957], [103.851577, 1.339665], [103.851161, 1.339873], [103.85109, 1.339911], [103.850779, 1.340087], [103.850186, 1.340474], [103.849983, 1.340558], [103.849563, 1.340698], [103.849325, 1.340737], [103.848644, 1.340766], [103.848506, 1.340771], [103.848429, 1.340772], [103.84843, 1.340887], [103.848437, 1.341545], [103.848439, 1.341734], [103.848522, 1.341734], [103.848741, 1.341737], [103.848757, 1.341789], [103.848794, 1.341811], [103.849394, 1.341807]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 6154.7, "duration": 763.9, "steps": [{"distance": 3.6, "duration": 2.6, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 102.1, "duration": 32.1, "instruction": "Continue straight onto Sinaran Drive", "name": "Sinaran Drive", "type": 6, "way_points": [1, 8]}, {"distance": 198.4, "duration": 50.8, "instruction": "Turn right onto Sinaran Drive", "name": "Sinaran Drive", "type": 1, "way_points": [8, 18]}, {"distance": 222.0, "duration": 32.0, "instruction": "Turn left onto Moulmein Rise", "name": "Moulmein Rise", "type": 0, "way_points": [18, 24]}, {"distance": 401.0, "duration": 69.5, "instruction": "Turn left onto Moulmein Road", "name": "Moulmein Road", "type": 0, "way_points": [24, 35]}, {"distance": 2501.7, "duration": 139.2, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [35, 79]}, {"distance": 825.1, "duration": 103.2, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [79, 95]}, {"distance": 641.3, "duration": 111.7, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [95, 113]}, {"distance": 548.1, "duration": 90.4, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [113, 130]}, {"distance": 17.5, "duration": 6.3, "instruction": "Turn right onto Lorong 6 Toa Payoh", "name": "Lorong 6 Toa Payoh", "type": 1, "way_points": [130, 131]}, {"distance": 475.9, "duration": 76.7, "instruction": "Continue straight onto Lorong 1 Toa Payoh", "name": "Lorong 1 Toa Payoh", "type": 6, "way_points": [131, 144]}, {"distance": 106.9, "duration": 15.4, "instruction": "Turn right onto Toa Payoh North", "name": "Toa Payoh North", "type": 1, "way_points": [144, 147]}, {"distance": 33.5, "duration": 15.4, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [147, 149]}, {"distance": 77.6, "duration": 18.6, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [149, 152]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [152, 152]}]}], "summary": {"distance": 6154.7, "duration": 763.9}, "way_points": [0, 152]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.843892122244, 1.32042967079118], [103.84939599719, 1.34205287411841]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886674902}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_1411e30d8737c9b58e433839f466e488.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_d8698413c2d39aaac9914b77c851439b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_d8698413c2d39aaac9914b77c851439b_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_d8698413c2d39aaac9914b77c851439b = L.geoJson(null, {
+                onEachFeature: geo_json_d8698413c2d39aaac9914b77c851439b_onEachFeature,
+            
+                style: geo_json_d8698413c2d39aaac9914b77c851439b_styler,
+            ...{
+}
+        });
+
+        function geo_json_d8698413c2d39aaac9914b77c851439b_add (data) {
+            geo_json_d8698413c2d39aaac9914b77c851439b
+                .addData(data);
+        }
+            geo_json_d8698413c2d39aaac9914b77c851439b_add({"bbox": [103.848508, 1.335324, 103.859831, 1.341807], "features": [{"bbox": [103.848508, 1.335324, 103.859831, 1.341807], "geometry": {"coordinates": [[103.849394, 1.341807], [103.849395, 1.341807], [103.849422, 1.3418], [103.849458, 1.341736], [103.849449, 1.341695], [103.849394, 1.341656], [103.848796, 1.341659], [103.848758, 1.341686], [103.848741, 1.341737], [103.848522, 1.341734], [103.848508, 1.340886], [103.848695, 1.340879], [103.849173, 1.340851], [103.849346, 1.34084], [103.849565, 1.34081], [103.849781, 1.340748], [103.84999, 1.340665], [103.850388, 1.340448], [103.850911, 1.340159], [103.851157, 1.340027], [103.851227, 1.33999], [103.851375, 1.339912], [103.851865, 1.339637], [103.85199, 1.339546], [103.852346, 1.33923], [103.852459, 1.339123], [103.852709, 1.338894], [103.852853, 1.338756], [103.853213, 1.338412], [103.853587, 1.338064], [103.853782, 1.337898], [103.854355, 1.338517], [103.854462, 1.338598], [103.854565, 1.338648], [103.854702, 1.33869], [103.854808, 1.338701], [103.85498, 1.338685], [103.855158, 1.33861], [103.855253, 1.338547], [103.855479, 1.338328], [103.855781, 1.338023], [103.855913, 1.337893], [103.856333, 1.337489], [103.85652, 1.337327], [103.856721, 1.337107], [103.856868, 1.336917], [103.85722, 1.336439], [103.857625, 1.335946], [103.8577, 1.335851], [103.857883, 1.335637], [103.858022, 1.335416], [103.858271, 1.335327], [103.858417, 1.335326], [103.85853, 1.335326], [103.858754, 1.335326], [103.858853, 1.335326], [103.858938, 1.335324], [103.859185, 1.335328], [103.859315, 1.335331], [103.85948, 1.335386], [103.859584, 1.33545], [103.85969, 1.33555], [103.85975, 1.335646], [103.859788, 1.335776], [103.859805, 1.335946], [103.859819, 1.336176], [103.859821, 1.3364], [103.859827, 1.336555], [103.859831, 1.336807], [103.859828, 1.336938], [103.859822, 1.337182], [103.859818, 1.337356], [103.859819, 1.337563], [103.85982, 1.337786], [103.859821, 1.337984], [103.859324, 1.337957], [103.859164, 1.337844], [103.859086, 1.337827], [103.858813, 1.337821], [103.858725, 1.337833], [103.858687, 1.33789], [103.858686, 1.338284]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 2227.7, "duration": 382.8, "steps": [{"distance": 101.2, "duration": 24.3, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 8]}, {"distance": 24.2, "duration": 8.7, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [8, 9]}, {"distance": 94.4, "duration": 13.6, "instruction": "Turn left onto Toa Payoh North", "name": "Toa Payoh North", "type": 0, "way_points": [9, 10]}, {"distance": 475.6, "duration": 77.3, "instruction": "Turn left onto Lorong 1 Toa Payoh", "name": "Lorong 1 Toa Payoh", "type": 0, "way_points": [10, 24]}, {"distance": 217.9, "duration": 42.9, "instruction": "Continue straight onto Lorong 6 Toa Payoh", "name": "Lorong 6 Toa Payoh", "type": 6, "way_points": [24, 30]}, {"distance": 668.8, "duration": 106.0, "instruction": "Turn left onto Lorong 7 Toa Payoh", "name": "Lorong 7 Toa Payoh", "type": 0, "way_points": [30, 50]}, {"distance": 468.0, "duration": 67.4, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [50, 74]}, {"distance": 177.7, "duration": 42.6, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [74, 81]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [81, 81]}]}], "summary": {"distance": 2227.7, "duration": 382.8}, "way_points": [0, 81]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.84939599719, 1.34205287411841], [103.858467966719, 1.33828365922679]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886677209}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_d8698413c2d39aaac9914b77c851439b.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_0f1b4be829e584925c4cded8b1d2c602_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_0f1b4be829e584925c4cded8b1d2c602_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_0f1b4be829e584925c4cded8b1d2c602 = L.geoJson(null, {
+                onEachFeature: geo_json_0f1b4be829e584925c4cded8b1d2c602_onEachFeature,
+            
+                style: geo_json_0f1b4be829e584925c4cded8b1d2c602_styler,
+            ...{
+}
+        });
+
+        function geo_json_0f1b4be829e584925c4cded8b1d2c602_add (data) {
+            geo_json_0f1b4be829e584925c4cded8b1d2c602
+                .addData(data);
+        }
+            geo_json_0f1b4be829e584925c4cded8b1d2c602_add({"bbox": [103.840952, 1.320775, 103.8599, 1.338284], "features": [{"bbox": [103.840952, 1.320775, 103.8599, 1.338284], "geometry": {"coordinates": [[103.858686, 1.338284], [103.858687, 1.33789], [103.858725, 1.337833], [103.858813, 1.337821], [103.859086, 1.337827], [103.859164, 1.337844], [103.859324, 1.337957], [103.859821, 1.337984], [103.85989, 1.33799], [103.859885, 1.337359], [103.859899, 1.336706], [103.8599, 1.33656], [103.859897, 1.336441], [103.859895, 1.336345], [103.85989, 1.336126], [103.859886, 1.335942], [103.85987, 1.335756], [103.859838, 1.33566], [103.859735, 1.33549], [103.859643, 1.335387], [103.859552, 1.335322], [103.859402, 1.335269], [103.859245, 1.335253], [103.858936, 1.335261], [103.858855, 1.335262], [103.858658, 1.335269], [103.858338, 1.335277], [103.858268, 1.335264], [103.858081, 1.335171], [103.858084, 1.334837], [103.858092, 1.334642], [103.858097, 1.334281], [103.858098, 1.334163], [103.858029, 1.334164], [103.857373, 1.334166], [103.857142, 1.33419], [103.856739, 1.334193], [103.856519, 1.334238], [103.856409, 1.334234], [103.856309, 1.33423], [103.856034, 1.334204], [103.855764, 1.334171], [103.85538, 1.334124], [103.855001, 1.334045], [103.854241, 1.333904], [103.853994, 1.333856], [103.853813, 1.333821], [103.853646, 1.333788], [103.853486, 1.333757], [103.853113, 1.333684], [103.852705, 1.333605], [103.852494, 1.333573], [103.852249, 1.333538], [103.851543, 1.333446], [103.85147, 1.333433], [103.851464, 1.333508], [103.851403, 1.333937], [103.851357, 1.334177], [103.851273, 1.334486], [103.85051, 1.334258], [103.850296, 1.334206], [103.850186, 1.334193], [103.850062, 1.334184], [103.849936, 1.334181], [103.849314, 1.334175], [103.848523, 1.334178], [103.847972, 1.334172], [103.847658, 1.334175], [103.84761, 1.334177], [103.847515, 1.334177], [103.847405, 1.334171], [103.846978, 1.334168], [103.846617, 1.332668], [103.846581, 1.33253], [103.846529, 1.332352], [103.846477, 1.33212], [103.84635, 1.331628], [103.846305, 1.331488], [103.846134, 1.33096], [103.84613, 1.330941], [103.846019, 1.330499], [103.84599, 1.330355], [103.845961, 1.330034], [103.845985, 1.329199], [103.846018, 1.328995], [103.846052, 1.328899], [103.846136, 1.328757], [103.84624, 1.328656], [103.846308, 1.328614], [103.846437, 1.328562], [103.846566, 1.32854], [103.846732, 1.328556], [103.846861, 1.32861], [103.846931, 1.328653], [103.847054, 1.328766], [103.847124, 1.328884], [103.847151, 1.32898], [103.847161, 1.329071], [103.847151, 1.329232], [103.847113, 1.329323], [103.847059, 1.32939], [103.846984, 1.329452], [103.846893, 1.329501], [103.846797, 1.329521], [103.846062, 1.329581], [103.845875, 1.329568], [103.844505, 1.329485], [103.844379, 1.329436], [103.844053, 1.329419], [103.843434, 1.32936], [103.843257, 1.329386], [103.843135, 1.329368], [103.842918, 1.329334], [103.842623, 1.329263], [103.841946, 1.32903], [103.84154, 1.328948], [103.841251, 1.328824], [103.841011, 1.328716], [103.840969, 1.328653], [103.840952, 1.328598], [103.841099, 1.328198], [103.841157, 1.328063], [103.841181, 1.328012], [103.841287, 1.327787], [103.841449, 1.32739], [103.841579, 1.327134], [103.841831, 1.326683], [103.841931, 1.326491], [103.841965, 1.326372], [103.842012, 1.326018], [103.842017, 1.325636], [103.842007, 1.325297], [103.841991, 1.325046], [103.841922, 1.324518], [103.841907, 1.324396], [103.841906, 1.323921], [103.841858, 1.323654], [103.841806, 1.323354], [103.841777, 1.323093], [103.84174, 1.322682], [103.841715, 1.322233], [103.841716, 1.322172], [103.841733, 1.32209], [103.841761, 1.321974], [103.841887, 1.321527], [103.841928, 1.32145], [103.842029, 1.321261], [103.842285, 1.320899], [103.842366, 1.320775], [103.842534, 1.320803], [103.842785, 1.320902], [103.842956, 1.320967], [103.84299, 1.320899], [103.843034, 1.320798], [103.843067, 1.320784], [103.843133, 1.320808]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 4654.9, "duration": 752.3, "steps": [{"distance": 185.4, "duration": 48.2, "instruction": "Head south", "name": "-", "type": 11, "way_points": [0, 8]}, {"distance": 476.9, "duration": 68.7, "instruction": "Turn right onto Lorong 8 Toa Payoh", "name": "Lorong 8 Toa Payoh", "type": 1, "way_points": [8, 28]}, {"distance": 112.1, "duration": 16.1, "instruction": "Turn left onto Lorong 7 Toa Payoh", "name": "Lorong 7 Toa Payoh", "type": 0, "way_points": [28, 32]}, {"distance": 151.2, "duration": 21.8, "instruction": "Turn right onto Toa Payoh East", "name": "Toa Payoh East", "type": 1, "way_points": [32, 36]}, {"distance": 348.6, "duration": 50.2, "instruction": "Keep right onto Toa Payoh East", "name": "Toa Payoh East", "type": 13, "way_points": [36, 47]}, {"distance": 245.2, "duration": 35.3, "instruction": "Continue straight onto Toa Payoh East", "name": "Toa Payoh East", "type": 6, "way_points": [47, 54]}, {"distance": 119.4, "duration": 17.2, "instruction": "Turn right onto Lorong 4 Toa Payoh", "name": "Lorong 4 Toa Payoh", "type": 1, "way_points": [54, 58]}, {"distance": 482.0, "duration": 69.4, "instruction": "Turn left onto Toa Payoh Central", "name": "Toa Payoh Central", "type": 0, "way_points": [58, 71]}, {"distance": 371.2, "duration": 63.6, "instruction": "Turn left onto Lorong 2 Toa Payoh", "name": "Lorong 2 Toa Payoh", "type": 0, "way_points": [71, 79]}, {"distance": 869.1, "duration": 103.6, "instruction": "Keep right", "name": "-", "type": 13, "way_points": [79, 110]}, {"distance": 374.1, "duration": 58.1, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [110, 123]}, {"distance": 817.8, "duration": 161.0, "instruction": "Continue straight onto Thomson Road", "name": "Thomson Road", "type": 6, "way_points": [123, 148]}, {"distance": 69.3, "duration": 21.3, "instruction": "Turn left onto Irrawaddy Road", "name": "Irrawaddy Road", "type": 0, "way_points": [148, 151]}, {"distance": 32.6, "duration": 17.8, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [151, 155]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [155, 155]}]}], "summary": {"distance": 4654.9, "duration": 752.3}, "way_points": [0, 155]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.858467966719, 1.33828365922679], [103.843219261065, 1.32057156550961]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886679575}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_0f1b4be829e584925c4cded8b1d2c602.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_2457e375305a892ffc2bae15e9262ea3_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_2457e375305a892ffc2bae15e9262ea3_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_2457e375305a892ffc2bae15e9262ea3 = L.geoJson(null, {
+                onEachFeature: geo_json_2457e375305a892ffc2bae15e9262ea3_onEachFeature,
+            
+                style: geo_json_2457e375305a892ffc2bae15e9262ea3_styler,
+            ...{
+}
+        });
+
+        function geo_json_2457e375305a892ffc2bae15e9262ea3_add (data) {
+            geo_json_2457e375305a892ffc2bae15e9262ea3
+                .addData(data);
+        }
+            geo_json_2457e375305a892ffc2bae15e9262ea3_add({"bbox": [103.832996, 1.300339, 103.843647, 1.320999], "features": [{"bbox": [103.832996, 1.300339, 103.843647, 1.320999], "geometry": {"coordinates": [[103.843133, 1.320808], [103.843308, 1.320872], [103.843254, 1.320999], [103.84299, 1.320899], [103.842755, 1.32081], [103.842619, 1.320732], [103.842592, 1.320695], [103.842561, 1.320611], [103.842559, 1.320543], [103.842716, 1.320337], [103.843079, 1.319937], [103.843249, 1.319759], [103.843524, 1.319396], [103.843536, 1.319381], [103.843577, 1.319324], [103.843647, 1.319222], [103.843452, 1.319162], [103.843092, 1.319073], [103.843014, 1.319048], [103.842933, 1.319022], [103.842792, 1.318956], [103.842722, 1.318897], [103.842377, 1.318592], [103.842194, 1.318406], [103.842011, 1.318241], [103.841908, 1.318105], [103.841797, 1.317923], [103.84177, 1.317875], [103.841644, 1.317498], [103.841602, 1.317346], [103.841428, 1.316702], [103.841326, 1.316269], [103.841195, 1.315771], [103.841169, 1.315684], [103.841163, 1.315665], [103.841113, 1.315475], [103.841038, 1.31521], [103.84099, 1.315046], [103.840838, 1.314735], [103.840816, 1.31469], [103.840646, 1.314449], [103.840375, 1.314162], [103.840142, 1.313961], [103.839782, 1.313649], [103.839579, 1.313476], [103.839534, 1.313412], [103.839539, 1.313327], [103.839588, 1.313226], [103.839608, 1.31316], [103.839621, 1.313031], [103.839621, 1.313011], [103.839582, 1.312922], [103.839505, 1.312814], [103.839341, 1.312673], [103.839239, 1.312613], [103.839102, 1.312579], [103.839095, 1.312209], [103.839164, 1.311828], [103.839209, 1.311651], [103.839392, 1.310912], [103.839172, 1.310858], [103.838573, 1.310717], [103.83839, 1.310673], [103.838296, 1.310649], [103.838242, 1.310634], [103.837962, 1.310565], [103.837895, 1.310546], [103.837637, 1.310469], [103.837463, 1.310397], [103.837238, 1.310235], [103.837117, 1.310147], [103.836708, 1.309858], [103.836314, 1.309584], [103.836404, 1.309329], [103.836486, 1.309098], [103.836604, 1.308749], [103.836657, 1.308604], [103.836676, 1.308551], [103.83682, 1.308151], [103.836873, 1.308], [103.837063, 1.307454], [103.8371, 1.307351], [103.837247, 1.306952], [103.837299, 1.306795], [103.837422, 1.306477], [103.837485, 1.30636], [103.837583, 1.30613], [103.837614, 1.306059], [103.837654, 1.305976], [103.837712, 1.305852], [103.837756, 1.305748], [103.837492, 1.305638], [103.837345, 1.305544], [103.83725, 1.305445], [103.837094, 1.305182], [103.83708, 1.305137], [103.837062, 1.305017], [103.837066, 1.304777], [103.837152, 1.304551], [103.837232, 1.304433], [103.83733, 1.30432], [103.837379, 1.304266], [103.837535, 1.30409], [103.837622, 1.303975], [103.837731, 1.303788], [103.837763, 1.30356], [103.837782, 1.303212], [103.837784, 1.303132], [103.837791, 1.302891], [103.837788, 1.302603], [103.837758, 1.302483], [103.837705, 1.302361], [103.837617, 1.302186], [103.837516, 1.302011], [103.83748, 1.30195], [103.837304, 1.301782], [103.837065, 1.301517], [103.836747, 1.301143], [103.836536, 1.300902], [103.836381, 1.300738], [103.836126, 1.300472], [103.835983, 1.300398], [103.83577, 1.300339], [103.835504, 1.300342], [103.835407, 1.300376], [103.835294, 1.300432], [103.835204, 1.300497], [103.835168, 1.300564], [103.835095, 1.300776], [103.83509, 1.300872], [103.835202, 1.301085], [103.835316, 1.301291], [103.835331, 1.301385], [103.83531, 1.301481], [103.835268, 1.301569], [103.835146, 1.301645], [103.834751, 1.301905], [103.83409, 1.302463], [103.833945, 1.302603], [103.83364, 1.302895], [103.833458, 1.303069], [103.833335, 1.303175], [103.833068, 1.3034], [103.832996, 1.30346]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 3597.2, "duration": 675.1, "steps": [{"distance": 20.6, "duration": 5.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 15.4, "duration": 5.5, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [1, 2]}, {"distance": 290.0, "duration": 64.9, "instruction": "Turn left onto Irrawaddy Road", "name": "Irrawaddy Road", "type": 0, "way_points": [2, 15]}, {"distance": 848.5, "duration": 140.1, "instruction": "Turn sharp right onto Newton Road", "name": "Newton Road", "type": 3, "way_points": [15, 46]}, {"distance": 304.3, "duration": 67.7, "exit_number": 4, "instruction": "Enter the roundabout and take the 4th exit onto Clemenceau Avenue North", "name": "Clemenceau Avenue North", "type": 7, "way_points": [46, 59]}, {"distance": 378.7, "duration": 54.5, "instruction": "Turn right onto Anthony Road", "name": "Anthony Road", "type": 1, "way_points": [59, 72]}, {"distance": 456.0, "duration": 104.4, "instruction": "Turn left onto Cairnhill Road", "name": "Cairnhill Road", "type": 0, "way_points": [72, 90]}, {"distance": 715.4, "duration": 155.6, "instruction": "Turn right onto Cairnhill Road", "name": "Cairnhill Road", "type": 1, "way_points": [90, 120]}, {"distance": 206.9, "duration": 25.4, "instruction": "Keep right onto Grange Road", "name": "Grange Road", "type": 13, "way_points": [120, 131]}, {"distance": 361.6, "duration": 52.1, "instruction": "Keep left onto Orchard Turn", "name": "Orchard Turn", "type": 12, "way_points": [131, 143]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at Orchard Turn, on the right", "name": "-", "type": 10, "way_points": [143, 143]}]}], "summary": {"distance": 3597.2, "duration": 675.1}, "way_points": [0, 143]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.843219261065, 1.32057156550961], [103.833200970183, 1.30370452023703]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886682026}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_2457e375305a892ffc2bae15e9262ea3.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_7bb1a6fd1002423883f2eec3f43474a7_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_7bb1a6fd1002423883f2eec3f43474a7_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_7bb1a6fd1002423883f2eec3f43474a7 = L.geoJson(null, {
+                onEachFeature: geo_json_7bb1a6fd1002423883f2eec3f43474a7_onEachFeature,
+            
+                style: geo_json_7bb1a6fd1002423883f2eec3f43474a7_styler,
+            ...{
+}
+        });
+
+        function geo_json_7bb1a6fd1002423883f2eec3f43474a7_add (data) {
+            geo_json_7bb1a6fd1002423883f2eec3f43474a7
+                .addData(data);
+        }
+            geo_json_7bb1a6fd1002423883f2eec3f43474a7_add({"bbox": [103.832996, 1.300053, 103.840709, 1.30346], "features": [{"bbox": [103.832996, 1.300053, 103.840709, 1.30346], "geometry": {"coordinates": [[103.832996, 1.30346], [103.833068, 1.3034], [103.833335, 1.303175], [103.833458, 1.303069], [103.83364, 1.302895], [103.833945, 1.302603], [103.83409, 1.302463], [103.834751, 1.301905], [103.835146, 1.301645], [103.835268, 1.301569], [103.835385, 1.301565], [103.835511, 1.301661], [103.835532, 1.301703], [103.83564, 1.301937], [103.835711, 1.302101], [103.83576, 1.30221], [103.835823, 1.302439], [103.835958, 1.302576], [103.836132, 1.302706], [103.836584, 1.302453], [103.83748, 1.30195], [103.837557, 1.301906], [103.837786, 1.301793], [103.837968, 1.301715], [103.838188, 1.30162], [103.838896, 1.301297], [103.838949, 1.301279], [103.839545, 1.301077], [103.839897, 1.300966], [103.840068, 1.300918], [103.840709, 1.300716], [103.840679, 1.300601], [103.840574, 1.300458], [103.840465, 1.300293], [103.840371, 1.300166], [103.840287, 1.300053], [103.840198, 1.300071], [103.840108, 1.300091], [103.839889, 1.300136], [103.839443, 1.300234], [103.839167, 1.300294], [103.839059, 1.300318], [103.838646, 1.300408], [103.838544, 1.30043], [103.838391, 1.300463], [103.838129, 1.300519], [103.837958, 1.300556], [103.837898, 1.300567], [103.837617, 1.300625], [103.837366, 1.30068], [103.837192, 1.300725], [103.836971, 1.300779], [103.836787, 1.30083], [103.836737, 1.300867], [103.836714, 1.300942], [103.836711, 1.300981], [103.836735, 1.301039], [103.837018, 1.301365], [103.837182, 1.301553]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 1645.2, "duration": 313.1, "steps": [{"distance": 453.3, "duration": 74.2, "instruction": "Head southeast on Orchard Turn", "name": "Orchard Turn", "type": 11, "way_points": [0, 16]}, {"distance": 45.5, "duration": 8.2, "instruction": "Keep right onto Orchard Link", "name": "Orchard Link", "type": 13, "way_points": [16, 18]}, {"distance": 556.9, "duration": 99.1, "instruction": "Turn right onto Orchard Road", "name": "Orchard Road", "type": 1, "way_points": [18, 30]}, {"distance": 88.2, "duration": 29.1, "instruction": "Turn right onto Killiney Road", "name": "Killiney Road", "type": 1, "way_points": [30, 35]}, {"distance": 398.5, "duration": 87.7, "instruction": "Turn right onto Somerset Road", "name": "Somerset Road", "type": 1, "way_points": [35, 52]}, {"distance": 102.8, "duration": 14.8, "instruction": "Keep right onto Somerset Road", "name": "Somerset Road", "type": 13, "way_points": [52, 58]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at Somerset Road, on the right", "name": "-", "type": 10, "way_points": [58, 58]}]}], "summary": {"distance": 1645.2, "duration": 313.1}, "way_points": [0, 58]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.833200970183, 1.30370452023703], [103.83735915836, 1.30139880165788]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886684484}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_7bb1a6fd1002423883f2eec3f43474a7.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_73d2e6c27b4f3c7a87d8b42e1c76a966_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_73d2e6c27b4f3c7a87d8b42e1c76a966_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_73d2e6c27b4f3c7a87d8b42e1c76a966 = L.geoJson(null, {
+                onEachFeature: geo_json_73d2e6c27b4f3c7a87d8b42e1c76a966_onEachFeature,
+            
+                style: geo_json_73d2e6c27b4f3c7a87d8b42e1c76a966_styler,
+            ...{
+}
+        });
+
+        function geo_json_73d2e6c27b4f3c7a87d8b42e1c76a966_add (data) {
+            geo_json_73d2e6c27b4f3c7a87d8b42e1c76a966
+                .addData(data);
+        }
+            geo_json_73d2e6c27b4f3c7a87d8b42e1c76a966_add({"bbox": [103.833878, 1.300053, 103.840709, 1.305763], "features": [{"bbox": [103.833878, 1.300053, 103.840709, 1.305763], "geometry": {"coordinates": [[103.837182, 1.301553], [103.837441, 1.301851], [103.83749, 1.301892], [103.837557, 1.301906], [103.837786, 1.301793], [103.837968, 1.301715], [103.838188, 1.30162], [103.838896, 1.301297], [103.838949, 1.301279], [103.839545, 1.301077], [103.839897, 1.300966], [103.840068, 1.300918], [103.840709, 1.300716], [103.840679, 1.300601], [103.840574, 1.300458], [103.840465, 1.300293], [103.840371, 1.300166], [103.840287, 1.300053], [103.840198, 1.300071], [103.840108, 1.300091], [103.839889, 1.300136], [103.839443, 1.300234], [103.839167, 1.300294], [103.839059, 1.300318], [103.838646, 1.300408], [103.838544, 1.30043], [103.838391, 1.300463], [103.838129, 1.300519], [103.837958, 1.300556], [103.837898, 1.300567], [103.837617, 1.300625], [103.837366, 1.30068], [103.837192, 1.300725], [103.836971, 1.300779], [103.836787, 1.30083], [103.836693, 1.300857], [103.836536, 1.300902], [103.836381, 1.300738], [103.836126, 1.300472], [103.835983, 1.300398], [103.83577, 1.300339], [103.835504, 1.300342], [103.835407, 1.300376], [103.835294, 1.300432], [103.835204, 1.300497], [103.835168, 1.300564], [103.835095, 1.300776], [103.83509, 1.300872], [103.835202, 1.301085], [103.835316, 1.301291], [103.835331, 1.301385], [103.83531, 1.301481], [103.835268, 1.301569], [103.835385, 1.301565], [103.835511, 1.301661], [103.835532, 1.301703], [103.83564, 1.301937], [103.835711, 1.302101], [103.83576, 1.30221], [103.835823, 1.302439], [103.835917, 1.302825], [103.835946, 1.302919], [103.835985, 1.302982], [103.83604, 1.303097], [103.836088, 1.303216], [103.836182, 1.303429], [103.836192, 1.303453], [103.836146, 1.303587], [103.836147, 1.303653], [103.836201, 1.303756], [103.83646, 1.304228], [103.836543, 1.304267], [103.836608, 1.304419], [103.836733, 1.304662], [103.836801, 1.304805], [103.837021, 1.30523], [103.836514, 1.305503], [103.836206, 1.305675], [103.836108, 1.305726], [103.835985, 1.305763], [103.835966, 1.305477], [103.835908, 1.305], [103.835829, 1.304745], [103.835703, 1.304428], [103.83564, 1.304297], [103.835572, 1.304223], [103.835447, 1.304149], [103.83535, 1.30413], [103.835212, 1.304141], [103.835011, 1.304202], [103.834701, 1.304311], [103.834652, 1.304322], [103.834653, 1.30436], [103.834617, 1.304427], [103.834616, 1.304466], [103.834384, 1.304726], [103.833878, 1.305219], [103.835141, 1.305283]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 2418.2, "duration": 456.5, "steps": [{"distance": 433.9, "duration": 83.3, "instruction": "Head northeast on Grange Road", "name": "Grange Road", "type": 11, "way_points": [0, 12]}, {"distance": 88.2, "duration": 29.1, "instruction": "Turn right onto Killiney Road", "name": "Killiney Road", "type": 1, "way_points": [12, 17]}, {"distance": 427.6, "duration": 98.2, "instruction": "Turn right onto Somerset Road", "name": "Somerset Road", "type": 1, "way_points": [17, 36]}, {"distance": 66.0, "duration": 13.4, "instruction": "Turn left onto Grange Road", "name": "Grange Road", "type": 0, "way_points": [36, 38]}, {"distance": 206.9, "duration": 25.4, "instruction": "Keep right onto Grange Road", "name": "Grange Road", "type": 13, "way_points": [38, 49]}, {"distance": 32.3, "duration": 4.7, "instruction": "Keep left onto Orchard Turn", "name": "Orchard Turn", "type": 12, "way_points": [49, 52]}, {"distance": 124.1, "duration": 26.8, "instruction": "Turn sharp right onto Orchard Turn", "name": "Orchard Turn", "type": 3, "way_points": [52, 59]}, {"distance": 120.5, "duration": 28.6, "instruction": "Continue straight onto Orchard Link", "name": "Orchard Link", "type": 6, "way_points": [59, 66]}, {"distance": 36.0, "duration": 10.5, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [66, 69]}, {"distance": 189.6, "duration": 45.8, "instruction": "Keep right", "name": "-", "type": 13, "way_points": [69, 75]}, {"distance": 129.8, "duration": 18.7, "instruction": "Turn left onto Mount Elizabeth Link", "name": "Mount Elizabeth Link", "type": 0, "way_points": [75, 79]}, {"distance": 288.2, "duration": 41.5, "instruction": "Turn sharp left onto Mount Elizabeth", "name": "Mount Elizabeth", "type": 2, "way_points": [79, 91]}, {"distance": 4.2, "duration": 0.6, "instruction": "Turn right onto Mount Elizabeth", "name": "Mount Elizabeth", "type": 1, "way_points": [91, 92]}, {"distance": 12.8, "duration": 1.8, "instruction": "Turn slight left onto Nutmeg Road", "name": "Nutmeg Road", "type": 4, "way_points": [92, 94]}, {"distance": 117.3, "duration": 16.9, "instruction": "Turn slight left onto Nutmeg Road", "name": "Nutmeg Road", "type": 4, "way_points": [94, 96]}, {"distance": 140.6, "duration": 11.3, "instruction": "Turn sharp right onto Jalan Lada Puteh", "name": "Jalan Lada Puteh", "type": 3, "way_points": [96, 97]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at Jalan Lada Puteh, on the left", "name": "-", "type": 10, "way_points": [97, 97]}]}], "summary": {"distance": 2418.2, "duration": 456.5}, "way_points": [0, 97]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.83735915836, 1.30139880165788], [103.835473484406, 1.30540799634699]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886686838}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_73d2e6c27b4f3c7a87d8b42e1c76a966.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_3e3953dc9e899725916ead1776f60822_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_3e3953dc9e899725916ead1776f60822_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_3e3953dc9e899725916ead1776f60822 = L.geoJson(null, {
+                onEachFeature: geo_json_3e3953dc9e899725916ead1776f60822_onEachFeature,
+            
+                style: geo_json_3e3953dc9e899725916ead1776f60822_styler,
+            ...{
+}
+        });
+
+        function geo_json_3e3953dc9e899725916ead1776f60822_add (data) {
+            geo_json_3e3953dc9e899725916ead1776f60822
+                .addData(data);
+        }
+            geo_json_3e3953dc9e899725916ead1776f60822_add({"bbox": [103.831172, 1.304163, 103.837614, 1.310608], "features": [{"bbox": [103.831172, 1.304163, 103.837614, 1.310608], "geometry": {"coordinates": [[103.835141, 1.305283], [103.833878, 1.305219], [103.834384, 1.304726], [103.834616, 1.304466], [103.834649, 1.304438], [103.834701, 1.30435], [103.834926, 1.304275], [103.835027, 1.304243], [103.835315, 1.304163], [103.835423, 1.304176], [103.835554, 1.304244], [103.835585, 1.304278], [103.835612, 1.304311], [103.835794, 1.304754], [103.83587, 1.30502], [103.83593, 1.305481], [103.835947, 1.305766], [103.835985, 1.305763], [103.836108, 1.305726], [103.836206, 1.305675], [103.836514, 1.305503], [103.837021, 1.30523], [103.837151, 1.30545], [103.837254, 1.305578], [103.837378, 1.305685], [103.83747, 1.305743], [103.837574, 1.305904], [103.837614, 1.306059], [103.837583, 1.30613], [103.837485, 1.30636], [103.837422, 1.306477], [103.837299, 1.306795], [103.837247, 1.306952], [103.8371, 1.307351], [103.837063, 1.307454], [103.836873, 1.308], [103.83682, 1.308151], [103.836676, 1.308551], [103.836657, 1.308604], [103.836604, 1.308749], [103.836486, 1.309098], [103.836404, 1.309329], [103.836314, 1.309584], [103.836149, 1.309832], [103.836088, 1.309923], [103.836078, 1.309937], [103.835914, 1.310184], [103.835697, 1.310481], [103.83565, 1.310546], [103.835604, 1.310608], [103.835082, 1.310306], [103.834848, 1.310169], [103.834421, 1.309914], [103.83429, 1.309807], [103.834108, 1.309735], [103.833869, 1.309424], [103.833721, 1.309193], [103.833638, 1.30911], [103.833572, 1.309076], [103.833418, 1.309042], [103.833328, 1.309047], [103.833236, 1.309071], [103.832966, 1.309176], [103.832881, 1.309232], [103.832802, 1.309284], [103.832422, 1.309467], [103.832119, 1.309592], [103.832075, 1.309397], [103.832041, 1.309243], [103.831988, 1.309012], [103.831899, 1.308619], [103.831842, 1.308367], [103.831801, 1.308197], [103.831751, 1.308069], [103.831681, 1.307918], [103.83164, 1.307836], [103.831555, 1.307641], [103.831522, 1.307568], [103.831438, 1.307382], [103.831353, 1.307194], [103.831333, 1.30715], [103.831307, 1.307095], [103.831287, 1.307056], [103.831172, 1.306819], [103.831628, 1.306581], [103.831759, 1.306515], [103.832035, 1.30637]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 2257.9, "duration": 377.5, "steps": [{"distance": 140.6, "duration": 11.3, "instruction": "Head west on Jalan Lada Puteh", "name": "Jalan Lada Puteh", "type": 11, "way_points": [0, 1]}, {"distance": 133.5, "duration": 19.2, "instruction": "Turn sharp left onto Nutmeg Road", "name": "Nutmeg Road", "type": 2, "way_points": [1, 5]}, {"distance": 277.1, "duration": 39.9, "instruction": "Keep left onto Mount Elizabeth", "name": "Mount Elizabeth", "type": 12, "way_points": [5, 16]}, {"distance": 134.1, "duration": 19.3, "instruction": "Turn right onto Mount Elizabeth Link", "name": "Mount Elizabeth Link", "type": 1, "way_points": [16, 21]}, {"distance": 77.0, "duration": 19.9, "instruction": "Turn left onto Cairnhill Road", "name": "Cairnhill Road", "type": 0, "way_points": [21, 25]}, {"distance": 39.1, "duration": 9.4, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [25, 27]}, {"distance": 556.6, "duration": 121.8, "instruction": "Turn slight left onto Cairnhill Road", "name": "Cairnhill Road", "type": 4, "way_points": [27, 49]}, {"distance": 171.2, "duration": 28.4, "instruction": "Turn left onto Scotts Road", "name": "Scotts Road", "type": 0, "way_points": [49, 53]}, {"distance": 117.2, "duration": 16.7, "instruction": "Keep right onto Scotts Road", "name": "Scotts Road", "type": 13, "way_points": [53, 58]}, {"distance": 175.5, "duration": 28.9, "instruction": "Turn slight right onto Draycott Drive", "name": "Draycott Drive", "type": 5, "way_points": [58, 66]}, {"distance": 327.7, "duration": 47.2, "instruction": "Turn left onto Claymore Hill", "name": "Claymore Hill", "type": 0, "way_points": [66, 83]}, {"distance": 108.2, "duration": 15.6, "instruction": "Turn left onto Claymore Hill", "name": "Claymore Hill", "type": 0, "way_points": [83, 86]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at Claymore Hill, on the left", "name": "-", "type": 10, "way_points": [86, 86]}]}], "summary": {"distance": 2257.9, "duration": 377.5}, "way_points": [0, 86]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.835473484406, 1.30540799634699], [103.832128174215, 1.30654704697701]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886689286}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_3e3953dc9e899725916ead1776f60822.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_23dc29a780515cd304be7741c94d2dd7_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_23dc29a780515cd304be7741c94d2dd7_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_23dc29a780515cd304be7741c94d2dd7 = L.geoJson(null, {
+                onEachFeature: geo_json_23dc29a780515cd304be7741c94d2dd7_onEachFeature,
+            
+                style: geo_json_23dc29a780515cd304be7741c94d2dd7_styler,
+            ...{
+}
+        });
+
+        function geo_json_23dc29a780515cd304be7741c94d2dd7_add (data) {
+            geo_json_23dc29a780515cd304be7741c94d2dd7
+                .addData(data);
+        }
+            geo_json_23dc29a780515cd304be7741c94d2dd7_add({"bbox": [103.832035, 1.306175, 103.854202, 1.317311], "features": [{"bbox": [103.832035, 1.306175, 103.854202, 1.317311], "geometry": {"coordinates": [[103.832035, 1.30637], [103.832102, 1.306335], [103.832393, 1.306175], [103.8325, 1.306411], [103.83279, 1.307029], [103.832913, 1.307325], [103.832996, 1.307522], [103.833015, 1.30757], [103.83308, 1.307747], [103.833144, 1.307934], [103.833209, 1.308145], [103.83323, 1.308243], [103.833424, 1.308804], [103.833572, 1.309076], [103.833789, 1.309456], [103.833885, 1.309624], [103.833945, 1.309693], [103.834274, 1.309992], [103.834432, 1.310109], [103.834817, 1.310355], [103.835516, 1.310741], [103.83616, 1.311101], [103.836533, 1.311353], [103.836672, 1.311447], [103.837123, 1.31175], [103.837247, 1.311837], [103.837353, 1.31191], [103.837886, 1.312284], [103.838365, 1.312622], [103.838685, 1.312844], [103.838684, 1.312926], [103.838712, 1.313002], [103.838758, 1.313103], [103.838893, 1.313223], [103.839086, 1.313359], [103.839179, 1.313407], [103.839288, 1.313432], [103.839446, 1.31338], [103.839539, 1.313327], [103.839588, 1.313226], [103.840568, 1.313309], [103.841245, 1.313395], [103.841613, 1.313437], [103.842622, 1.313566], [103.843412, 1.313658], [103.843789, 1.313704], [103.845017, 1.313885], [103.845135, 1.313914], [103.845234, 1.313966], [103.845231, 1.314468], [103.845221, 1.314592], [103.84519, 1.314698], [103.84523, 1.314793], [103.845269, 1.314844], [103.845312, 1.314878], [103.845382, 1.314896], [103.845559, 1.314821], [103.845761, 1.314773], [103.845967, 1.314751], [103.846057, 1.314771], [103.846182, 1.314869], [103.846784, 1.315521], [103.847115, 1.315874], [103.84744, 1.316164], [103.847799, 1.316405], [103.848495, 1.316837], [103.849059, 1.317119], [103.849502, 1.317293], [103.849553, 1.317311], [103.849631, 1.317301], [103.849746, 1.317252], [103.849937, 1.317123], [103.850145, 1.316914], [103.850295, 1.316763], [103.850581, 1.316456], [103.850585, 1.316399], [103.850643, 1.316326], [103.850675, 1.316292], [103.850794, 1.316162], [103.850978, 1.315972], [103.851267, 1.315655], [103.851355, 1.315559], [103.85157, 1.31532], [103.851723, 1.315177], [103.851898, 1.315005], [103.852132, 1.314778], [103.852616, 1.31418], [103.8531, 1.313624], [103.853133, 1.313583], [103.853343, 1.313343], [103.85365, 1.313002], [103.853765, 1.312909], [103.853444, 1.312438], [103.853333, 1.312243], [103.853197, 1.311982], [103.853441, 1.311732], [103.853559, 1.311575], [103.853887, 1.311895], [103.85411, 1.312088], [103.854202, 1.312169], [103.854159, 1.312216], [103.854129, 1.312248], [103.85414, 1.312258]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 3541.3, "duration": 559.0, "steps": [{"distance": 45.4, "duration": 6.5, "instruction": "Head southeast on Claymore Hill", "name": "Claymore Hill", "type": 11, "way_points": [0, 2]}, {"distance": 1063.2, "duration": 172.7, "instruction": "Turn left onto Scotts Road", "name": "Scotts Road", "type": 0, "way_points": [2, 29]}, {"distance": 777.7, "duration": 118.3, "exit_number": 3, "instruction": "Enter the roundabout and take the 3rd exit onto Keng Lee Road", "name": "Keng Lee Road", "type": 7, "way_points": [29, 48]}, {"distance": 82.0, "duration": 16.3, "instruction": "Turn left onto Thomson Road", "name": "Thomson Road", "type": 0, "way_points": [48, 51]}, {"distance": 128.1, "duration": 26.0, "instruction": "Keep right", "name": "-", "type": 13, "way_points": [51, 60]}, {"distance": 626.8, "duration": 90.3, "instruction": "Continue straight onto Norfolk Road", "name": "Norfolk Road", "type": 6, "way_points": [60, 75]}, {"distance": 525.6, "duration": 75.7, "instruction": "Turn slight left onto Owen Road", "name": "Owen Road", "type": 4, "way_points": [75, 91]}, {"distance": 121.0, "duration": 20.6, "instruction": "Turn right onto Race Course Road", "name": "Race Course Road", "type": 1, "way_points": [91, 94]}, {"distance": 60.6, "duration": 8.7, "instruction": "Turn left onto Birch Road", "name": "Birch Road", "type": 0, "way_points": [94, 96]}, {"distance": 97.3, "duration": 14.0, "instruction": "Turn left onto Farrer Park Station Road", "name": "Farrer Park Station Road", "type": 0, "way_points": [96, 99]}, {"distance": 13.6, "duration": 9.8, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [99, 102]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [102, 102]}]}], "summary": {"distance": 3541.3, "duration": 559.0}, "way_points": [0, 102]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.832128174215, 1.30654704697701], [103.853929522508, 1.31247326486217]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886691592}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_23dc29a780515cd304be7741c94d2dd7.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_5e527e6b5d666414408a7701bff74af8_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_5e527e6b5d666414408a7701bff74af8_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_5e527e6b5d666414408a7701bff74af8 = L.geoJson(null, {
+                onEachFeature: geo_json_5e527e6b5d666414408a7701bff74af8_onEachFeature,
+            
+                style: geo_json_5e527e6b5d666414408a7701bff74af8_styler,
+            ...{
+}
+        });
+
+        function geo_json_5e527e6b5d666414408a7701bff74af8_add (data) {
+            geo_json_5e527e6b5d666414408a7701bff74af8
+                .addData(data);
+        }
+            geo_json_5e527e6b5d666414408a7701bff74af8_add({"bbox": [103.85414, 1.309615, 103.85767, 1.312276], "features": [{"bbox": [103.85414, 1.309615, 103.85767, 1.312276], "geometry": {"coordinates": [[103.85414, 1.312258], [103.854158, 1.312276], [103.854189, 1.312245], [103.854231, 1.312194], [103.854265, 1.312224], [103.854522, 1.311948], [103.85473, 1.311713], [103.854828, 1.311599], [103.855048, 1.311347], [103.855123, 1.311452], [103.855368, 1.311801], [103.855408, 1.311857], [103.855885, 1.31131], [103.855992, 1.311186], [103.856346, 1.310782], [103.856589, 1.310545], [103.856934, 1.310223], [103.857177, 1.309995], [103.857575, 1.309615], [103.85767, 1.309752]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 585.9, "duration": 117.8, "steps": [{"distance": 15.1, "duration": 10.9, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 3]}, {"distance": 5.1, "duration": 0.7, "instruction": "Turn left onto Farrer Park Station Road", "name": "Farrer Park Station Road", "type": 0, "way_points": [3, 4]}, {"distance": 130.8, "duration": 18.8, "instruction": "Turn right onto Owen Road", "name": "Owen Road", "type": 1, "way_points": [4, 8]}, {"distance": 69.5, "duration": 16.7, "instruction": "Turn sharp left onto Serangoon Road", "name": "Serangoon Road", "type": 2, "way_points": [8, 11]}, {"distance": 347.0, "duration": 67.3, "instruction": "Turn sharp right onto Kitchener Road", "name": "Kitchener Road", "type": 3, "way_points": [11, 18]}, {"distance": 18.5, "duration": 3.3, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [18, 19]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [19, 19]}]}], "summary": {"distance": 585.9, "duration": 117.8}, "way_points": [0, 19]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.853929522508, 1.31247326486217], [103.857821340639, 1.30964598900104]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886693941}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_5e527e6b5d666414408a7701bff74af8.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_96e5844b865957d1587ffee5da2a2bc4_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_96e5844b865957d1587ffee5da2a2bc4_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_96e5844b865957d1587ffee5da2a2bc4 = L.geoJson(null, {
+                onEachFeature: geo_json_96e5844b865957d1587ffee5da2a2bc4_onEachFeature,
+            
+                style: geo_json_96e5844b865957d1587ffee5da2a2bc4_styler,
+            ...{
+}
+        });
+
+        function geo_json_96e5844b865957d1587ffee5da2a2bc4_add (data) {
+            geo_json_96e5844b865957d1587ffee5da2a2bc4
+                .addData(data);
+        }
+            geo_json_96e5844b865957d1587ffee5da2a2bc4_add({"bbox": [103.857484, 1.301093, 103.86085, 1.310673], "features": [{"bbox": [103.857484, 1.301093, 103.86085, 1.310673], "geometry": {"coordinates": [[103.85767, 1.309752], [103.858307, 1.310664], [103.858347, 1.310673], [103.858602, 1.310475], [103.858239, 1.309896], [103.857861, 1.30936], [103.857819, 1.3093], [103.857484, 1.30877], [103.857784, 1.308517], [103.858138, 1.308218], [103.858166, 1.308193], [103.858267, 1.308103], [103.858347, 1.308032], [103.8585, 1.307895], [103.858559, 1.307835], [103.858629, 1.307764], [103.85872, 1.307667], [103.858792, 1.307595], [103.858913, 1.307473], [103.859106, 1.307277], [103.858919, 1.307071], [103.858714, 1.306844], [103.858836, 1.306717], [103.859176, 1.306398], [103.859401, 1.306189], [103.859634, 1.305971], [103.859701, 1.30589], [103.859789, 1.30578], [103.859902, 1.305614], [103.859999, 1.305458], [103.860196, 1.305135], [103.860268, 1.30502], [103.860479, 1.304698], [103.86081, 1.304197], [103.860678, 1.304138], [103.8605, 1.304049], [103.86011, 1.303819], [103.859622, 1.303465], [103.859533, 1.303393], [103.859317, 1.30321], [103.85923, 1.303135], [103.859177, 1.303084], [103.859324, 1.30288], [103.859579, 1.302523], [103.859619, 1.302465], [103.859788, 1.302225], [103.859841, 1.302156], [103.859871, 1.302113], [103.86004, 1.301873], [103.860287, 1.301529], [103.860402, 1.301592], [103.860641, 1.301731], [103.860775, 1.301497], [103.86085, 1.30137], [103.860629, 1.30123], [103.860574, 1.301194], [103.86041, 1.301093]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 1661.7, "duration": 302.9, "steps": [{"distance": 164.2, "duration": 31.7, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 3]}, {"distance": 226.7, "duration": 39.9, "instruction": "Turn right onto Jalan Besar", "name": "Jalan Besar", "type": 1, "way_points": [3, 7]}, {"distance": 245.3, "duration": 35.3, "instruction": "Turn left onto Maude Road", "name": "Maude Road", "type": 0, "way_points": [7, 19]}, {"distance": 64.9, "duration": 9.3, "instruction": "Turn right onto King George\u0027s Avenue", "name": "King George\u0027s Avenue", "type": 1, "way_points": [19, 21]}, {"distance": 377.9, "duration": 86.0, "instruction": "Turn left onto Syed Alwi Road", "name": "Syed Alwi Road", "type": 0, "way_points": [21, 33]}, {"distance": 220.8, "duration": 48.5, "instruction": "Turn right onto North Bridge Road", "name": "North Bridge Road", "type": 1, "way_points": [33, 41]}, {"distance": 212.4, "duration": 30.6, "instruction": "Turn left onto Kandahar Street", "name": "Kandahar Street", "type": 0, "way_points": [41, 49]}, {"distance": 45.3, "duration": 6.5, "instruction": "Turn left onto Baghdad Street", "name": "Baghdad Street", "type": 0, "way_points": [49, 51]}, {"distance": 46.5, "duration": 6.7, "instruction": "Turn right onto Sultan Gate", "name": "Sultan Gate", "type": 1, "way_points": [51, 53]}, {"distance": 57.7, "duration": 8.3, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [53, 56]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [56, 56]}]}], "summary": {"distance": 1661.7, "duration": 302.9}, "way_points": [0, 56]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.857821340639, 1.30964598900104], [103.860481763929, 1.30097707763182]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886696676}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_96e5844b865957d1587ffee5da2a2bc4.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_4d158ef738a813c5a91a002caf24c157_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_4d158ef738a813c5a91a002caf24c157_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_4d158ef738a813c5a91a002caf24c157 = L.geoJson(null, {
+                onEachFeature: geo_json_4d158ef738a813c5a91a002caf24c157_onEachFeature,
+            
+                style: geo_json_4d158ef738a813c5a91a002caf24c157_styler,
+            ...{
+}
+        });
+
+        function geo_json_4d158ef738a813c5a91a002caf24c157_add (data) {
+            geo_json_4d158ef738a813c5a91a002caf24c157
+                .addData(data);
+        }
+            geo_json_4d158ef738a813c5a91a002caf24c157_add({"bbox": [103.796369, 1.265568, 103.862651, 1.30137], "features": [{"bbox": [103.796369, 1.265568, 103.862651, 1.30137], "geometry": {"coordinates": [[103.86041, 1.301093], [103.860574, 1.301194], [103.860629, 1.30123], [103.86085, 1.30137], [103.861054, 1.301023], [103.861273, 1.301135], [103.861341, 1.301078], [103.861355, 1.301025], [103.861347, 1.300984], [103.861154, 1.30088], [103.861076, 1.300838], [103.860726, 1.300634], [103.860426, 1.300437], [103.860066, 1.300168], [103.860025, 1.300138], [103.859792, 1.299974], [103.859451, 1.299719], [103.859593, 1.299549], [103.859893, 1.299165], [103.860832, 1.297936], [103.86092, 1.297805], [103.861062, 1.297539], [103.861122, 1.297372], [103.861222, 1.296869], [103.861259, 1.296197], [103.861278, 1.295886], [103.86129, 1.295811], [103.861309, 1.295398], [103.861362, 1.295103], [103.861488, 1.294713], [103.861647, 1.29438], [103.862104, 1.293725], [103.862339, 1.293322], [103.862525, 1.292904], [103.862647, 1.292493], [103.862651, 1.292413], [103.862614, 1.29215], [103.862471, 1.291562], [103.862078, 1.29059], [103.86193, 1.290113], [103.861851, 1.289704], [103.861791, 1.289226], [103.861764, 1.28889], [103.861732, 1.288404], [103.861621, 1.287441], [103.861588, 1.285826], [103.861564, 1.285128], [103.861442, 1.283788], [103.861362, 1.28341], [103.861249, 1.282978], [103.861109, 1.28254], [103.860941, 1.282029], [103.860806, 1.281723], [103.860682, 1.281487], [103.860357, 1.280822], [103.859963, 1.280129], [103.859614, 1.279557], [103.859052, 1.278703], [103.858558, 1.277949], [103.858025, 1.277107], [103.857565, 1.276376], [103.857369, 1.276505], [103.856882, 1.276824], [103.856212, 1.277264], [103.855951, 1.276847], [103.855648, 1.276362], [103.855414, 1.27601], [103.854808, 1.275073], [103.854763, 1.274997], [103.854613, 1.275092], [103.85318, 1.276007], [103.851717, 1.27694], [103.851002, 1.277397], [103.850027, 1.278019], [103.849796, 1.277648], [103.849596, 1.277325], [103.849577, 1.277295], [103.849287, 1.276828], [103.849154, 1.276618], [103.849032, 1.276696], [103.848724, 1.276897], [103.848208, 1.276082], [103.84812, 1.275952], [103.847855, 1.275577], [103.847484, 1.274999], [103.847343, 1.274805], [103.846716, 1.274094], [103.846642, 1.274015], [103.846332, 1.273662], [103.846288, 1.273613], [103.84612, 1.273416], [103.84591, 1.273135], [103.845562, 1.272739], [103.84535, 1.27251], [103.844939, 1.272533], [103.844344, 1.272528], [103.844125, 1.272522], [103.843884, 1.272517], [103.843737, 1.272516], [103.843623, 1.272513], [103.843063, 1.272498], [103.842639, 1.27248], [103.841918, 1.272454], [103.841797, 1.272448], [103.841617, 1.272444], [103.841356, 1.272433], [103.83995, 1.272387], [103.838326, 1.272335], [103.837012, 1.272284], [103.836255, 1.272273], [103.835427, 1.272231], [103.83363, 1.272166], [103.832806, 1.272136], [103.832525, 1.272105], [103.832258, 1.27203], [103.832127, 1.27196], [103.831957, 1.271816], [103.830681, 1.270797], [103.830404, 1.270574], [103.830225, 1.270429], [103.830043, 1.270307], [103.829692, 1.270011], [103.82907, 1.269439], [103.828884, 1.269258], [103.828784, 1.269157], [103.828703, 1.269125], [103.828438, 1.268862], [103.827897, 1.268317], [103.82771, 1.268143], [103.827095, 1.267593], [103.825804, 1.266374], [103.825538, 1.266168], [103.825413, 1.266097], [103.825168, 1.265989], [103.824934, 1.265911], [103.824597, 1.265838], [103.823647, 1.265772], [103.823354, 1.265749], [103.821419, 1.265599], [103.82098, 1.265569], [103.820662, 1.265568], [103.82043, 1.265584], [103.820117, 1.265638], [103.819758, 1.265753], [103.819508, 1.265863], [103.819275, 1.265989], [103.81896, 1.266183], [103.81858, 1.266437], [103.817968, 1.266861], [103.816173, 1.267901], [103.814839, 1.268615], [103.814083, 1.269059], [103.813388, 1.269516], [103.812078, 1.270413], [103.811659, 1.270648], [103.81127, 1.270785], [103.810925, 1.27085], [103.809439, 1.270928], [103.80933, 1.270891], [103.809221, 1.270881], [103.808121, 1.270973], [103.8078, 1.271015], [103.807472, 1.27108], [103.807074, 1.271179], [103.806855, 1.271263], [103.806588, 1.27137], [103.805872, 1.271707], [103.805619, 1.271828], [103.804608, 1.27227], [103.804151, 1.272397], [103.803884, 1.272442], [103.803389, 1.272495], [103.802853, 1.272532], [103.80276, 1.272534], [103.802306, 1.272563], [103.802224, 1.272566], [103.801864, 1.272599], [103.801761, 1.272621], [103.801495, 1.272675], [103.800952, 1.272873], [103.800631, 1.273011], [103.799964, 1.273338], [103.799736, 1.273439], [103.799243, 1.273639], [103.798878, 1.273796], [103.798607, 1.27389], [103.79844, 1.273949], [103.797892, 1.274136], [103.797286, 1.274321], [103.796783, 1.274485], [103.796369, 1.274616], [103.796459, 1.274821], [103.796863, 1.274681], [103.796964, 1.274646], [103.797031, 1.274805], [103.797347, 1.275496], [103.797364, 1.275533], [103.79765, 1.276155], [103.7978, 1.276449], [103.797942, 1.276724], [103.798121, 1.277038], [103.79844, 1.2775], [103.798831, 1.278061], [103.798875, 1.278087], [103.798994, 1.278087], [103.799711, 1.277737], [103.799956, 1.27762]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 11778.0, "duration": 1416.0, "steps": [{"distance": 57.7, "duration": 8.3, "instruction": "Head northeast", "name": "-", "type": 11, "way_points": [0, 3]}, {"distance": 44.8, "duration": 6.4, "instruction": "Turn right onto Sultan Gate", "name": "Sultan Gate", "type": 1, "way_points": [3, 4]}, {"distance": 27.3, "duration": 3.9, "instruction": "Turn left onto Beach Road", "name": "Beach Road", "type": 0, "way_points": [4, 5]}, {"distance": 274.5, "duration": 59.8, "instruction": "Continue straight onto Beach Road", "name": "Beach Road", "type": 6, "way_points": [5, 16]}, {"distance": 2822.2, "duration": 288.5, "instruction": "Turn left onto Ophir Road", "name": "Ophir Road", "type": 0, "way_points": [16, 60]}, {"distance": 180.0, "duration": 28.4, "instruction": "Turn right onto Central Boulevard", "name": "Central Boulevard", "type": 1, "way_points": [60, 63]}, {"distance": 299.2, "duration": 45.9, "instruction": "Turn left onto Bayfront Avenue", "name": "Bayfront Avenue", "type": 0, "way_points": [63, 68]}, {"distance": 624.5, "duration": 53.5, "instruction": "Turn right onto Park Street", "name": "Park Street", "type": 1, "way_points": [68, 73]}, {"distance": 183.5, "duration": 16.5, "instruction": "Turn left onto Shenton Lane", "name": "Shenton Lane", "type": 0, "way_points": [73, 78]}, {"distance": 57.0, "duration": 13.1, "instruction": "Turn right onto Union Street", "name": "Union Street", "type": 1, "way_points": [78, 80]}, {"distance": 617.0, "duration": 103.1, "instruction": "Turn left onto Shenton Way", "name": "Shenton Way", "type": 0, "way_points": [80, 93]}, {"distance": 4407.8, "duration": 460.4, "instruction": "Turn right onto Keppel Road", "name": "Keppel Road", "type": 1, "way_points": [93, 157]}, {"distance": 1526.5, "duration": 213.7, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [157, 190]}, {"distance": 84.2, "duration": 18.8, "instruction": "Continue straight onto Pasir Panjang Road", "name": "Pasir Panjang Road", "type": 6, "way_points": [190, 193]}, {"distance": 434.0, "duration": 62.5, "instruction": "Turn left onto Alexandra Terrace", "name": "Alexandra Terrace", "type": 0, "way_points": [193, 202]}, {"distance": 137.8, "duration": 33.1, "instruction": "Turn slight right", "name": "-", "type": 5, "way_points": [202, 206]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [206, 206]}]}], "summary": {"distance": 11778.0, "duration": 1416.0}, "way_points": [0, 206]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.860481763929, 1.30097707763182], [103.800215758536, 1.27749904086527]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886699027}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_4d158ef738a813c5a91a002caf24c157.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_3a9400fafa806e28ac896ed2f00dcba7_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_3a9400fafa806e28ac896ed2f00dcba7_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_3a9400fafa806e28ac896ed2f00dcba7 = L.geoJson(null, {
+                onEachFeature: geo_json_3a9400fafa806e28ac896ed2f00dcba7_onEachFeature,
+            
+                style: geo_json_3a9400fafa806e28ac896ed2f00dcba7_styler,
+            ...{
+}
+        });
+
+        function geo_json_3a9400fafa806e28ac896ed2f00dcba7_add (data) {
+            geo_json_3a9400fafa806e28ac896ed2f00dcba7
+                .addData(data);
+        }
+            geo_json_3a9400fafa806e28ac896ed2f00dcba7_add({"bbox": [103.792615, 1.272877, 103.837816, 1.341923], "features": [{"bbox": [103.792615, 1.272877, 103.837816, 1.341923], "geometry": {"coordinates": [[103.799956, 1.27762], [103.799711, 1.277737], [103.798994, 1.278087], [103.798875, 1.278087], [103.798831, 1.278061], [103.79844, 1.2775], [103.798121, 1.277038], [103.797942, 1.276724], [103.7978, 1.276449], [103.79765, 1.276155], [103.797364, 1.275533], [103.797347, 1.275496], [103.797031, 1.274805], [103.796964, 1.274646], [103.79795, 1.274295], [103.799259, 1.273853], [103.799735, 1.273675], [103.80008, 1.273509], [103.80079, 1.273182], [103.801008, 1.273084], [103.801458, 1.272924], [103.801606, 1.272877], [103.801891, 1.272941], [103.801937, 1.272969], [103.802049, 1.273104], [103.802083, 1.273283], [103.80205, 1.273529], [103.802017, 1.273778], [103.802006, 1.273847], [103.801995, 1.274105], [103.801987, 1.274201], [103.801959, 1.274503], [103.801926, 1.274913], [103.801939, 1.275291], [103.801974, 1.275568], [103.802024, 1.275779], [103.802092, 1.276002], [103.802112, 1.276059], [103.802285, 1.27656], [103.802441, 1.276993], [103.802568, 1.277341], [103.802601, 1.277433], [103.802934, 1.278363], [103.803016, 1.278589], [103.803045, 1.278847], [103.803025, 1.279105], [103.802856, 1.279549], [103.802707, 1.279863], [103.802567, 1.28011], [103.802459, 1.28031], [103.802354, 1.280533], [103.802235, 1.280789], [103.802011, 1.281254], [103.801952, 1.281364], [103.801359, 1.282483], [103.801257, 1.282681], [103.80117, 1.282916], [103.80114, 1.283082], [103.801056, 1.283281], [103.801004, 1.28338], [103.800834, 1.283616], [103.80071, 1.283738], [103.799729, 1.284369], [103.799386, 1.28461], [103.798763, 1.285124], [103.798693, 1.285193], [103.798664, 1.285269], [103.798064, 1.285672], [103.79668, 1.286601], [103.796135, 1.286922], [103.795077, 1.287503], [103.794967, 1.287509], [103.794636, 1.28766], [103.793982, 1.28799], [103.793845, 1.288061], [103.793354, 1.288315], [103.79317, 1.288452], [103.793149, 1.288468], [103.792922, 1.288639], [103.792713, 1.288808], [103.792615, 1.288885], [103.792635, 1.288907], [103.792696, 1.288975], [103.793037, 1.28933], [103.793359, 1.289679], [103.793756, 1.290044], [103.794254, 1.290371], [103.794757, 1.290655], [103.79495, 1.290736], [103.795101, 1.290798], [103.797247, 1.291699], [103.797613, 1.2919], [103.797978, 1.292177], [103.798345, 1.292562], [103.798575, 1.292935], [103.798683, 1.293142], [103.798874, 1.293564], [103.798964, 1.293899], [103.799192, 1.294945], [103.799296, 1.295365], [103.799407, 1.29576], [103.799458, 1.295885], [103.799509, 1.29601], [103.79974, 1.29654], [103.79995, 1.296989], [103.800123, 1.297309], [103.800209, 1.297523], [103.800311, 1.297827], [103.800453, 1.298422], [103.800484, 1.298557], [103.800749, 1.299735], [103.800945, 1.300544], [103.801025, 1.301057], [103.801282, 1.302286], [103.801309, 1.302422], [103.801411, 1.302944], [103.80146, 1.303317], [103.801476, 1.303506], [103.801463, 1.303958], [103.801536, 1.305097], [103.801585, 1.305388], [103.801617, 1.305517], [103.801633, 1.305578], [103.801662, 1.305679], [103.801982, 1.306613], [103.802425, 1.307823], [103.802544, 1.308141], [103.802878, 1.308985], [103.802928, 1.309108], [103.803194, 1.309868], [103.803393, 1.310482], [103.803652, 1.311363], [103.804173, 1.313237], [103.804221, 1.31338], [103.804259, 1.313489], [103.804385, 1.313853], [103.804566, 1.314332], [103.804707, 1.314634], [103.804843, 1.314901], [103.804932, 1.315021], [103.805257, 1.315394], [103.805618, 1.315725], [103.806017, 1.316093], [103.806253, 1.316324], [103.806405, 1.316461], [103.806538, 1.316588], [103.806768, 1.316782], [103.806934, 1.316918], [103.807174, 1.31714], [103.807287, 1.317244], [103.808704, 1.318535], [103.809124, 1.318875], [103.809482, 1.31912], [103.809915, 1.319351], [103.810678, 1.319692], [103.810915, 1.319818], [103.811131, 1.319921], [103.811413, 1.320087], [103.811646, 1.320281], [103.811899, 1.32054], [103.812655, 1.32142], [103.812894, 1.321742], [103.812963, 1.321875], [103.813082, 1.322262], [103.813266, 1.323253], [103.813472, 1.32431], [103.813598, 1.324905], [103.813644, 1.325223], [103.81382, 1.326899], [103.813864, 1.327465], [103.813922, 1.328122], [103.814038, 1.328594], [103.814094, 1.328775], [103.814282, 1.329174], [103.814406, 1.329358], [103.814538, 1.329544], [103.81478, 1.329896], [103.814908, 1.330069], [103.815073, 1.330322], [103.815237, 1.330569], [103.815301, 1.330664], [103.815522, 1.331037], [103.815701, 1.331425], [103.815758, 1.331586], [103.816026, 1.332009], [103.816248, 1.332369], [103.816466, 1.332691], [103.816684, 1.333013], [103.816784, 1.333159], [103.816917, 1.333349], [103.817167, 1.33362], [103.817534, 1.333958], [103.817821, 1.334191], [103.818094, 1.334379], [103.818321, 1.334523], [103.820063, 1.335386], [103.82076, 1.335828], [103.821122, 1.336081], [103.822189, 1.336829], [103.822224, 1.33685], [103.823455, 1.337654], [103.825282, 1.338891], [103.825865, 1.339261], [103.826314, 1.339525], [103.826748, 1.339751], [103.827214, 1.339965], [103.827674, 1.340144], [103.828445, 1.340411], [103.829207, 1.340599], [103.829974, 1.340701], [103.830445, 1.34072], [103.830748, 1.340707], [103.831049, 1.340674], [103.831358, 1.340646], [103.83201, 1.340594], [103.832409, 1.340566], [103.832842, 1.340564], [103.833064, 1.340576], [103.833319, 1.340609], [103.833705, 1.340715], [103.834037, 1.340828], [103.834304, 1.340959], [103.834791, 1.341243], [103.834931, 1.34133], [103.835259, 1.341544], [103.835711, 1.341831], [103.835897, 1.341923], [103.836045, 1.341674], [103.836107, 1.341574], [103.836564, 1.340881], [103.836711, 1.340592], [103.836853, 1.340368], [103.83713, 1.340385], [103.837326, 1.34038], [103.83754, 1.340374], [103.837816, 1.340346], [103.837784, 1.340699]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 12205.9, "duration": 1524.2, "steps": [{"distance": 137.8, "duration": 33.1, "instruction": "Head northwest", "name": "-", "type": 11, "way_points": [0, 4]}, {"distance": 434.0, "duration": 62.5, "instruction": "Turn slight left onto Alexandra Terrace", "name": "Alexandra Terrace", "type": 4, "way_points": [4, 13]}, {"distance": 552.8, "duration": 66.0, "instruction": "Turn left onto Pasir Panjang Road", "name": "Pasir Panjang Road", "type": 0, "way_points": [13, 21]}, {"distance": 1237.3, "duration": 213.5, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [21, 57]}, {"distance": 844.4, "duration": 61.9, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [57, 70]}, {"distance": 272.8, "duration": 29.3, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [70, 78]}, {"distance": 43.7, "duration": 12.2, "instruction": "Keep right", "name": "-", "type": 13, "way_points": [78, 80]}, {"distance": 1295.0, "duration": 164.4, "instruction": "Turn right onto Portsdown Avenue", "name": "Portsdown Avenue", "type": 1, "way_points": [80, 104]}, {"distance": 1281.1, "duration": 136.5, "instruction": "Keep right onto Queensway", "name": "Queensway", "type": 13, "way_points": [104, 126]}, {"distance": 5214.9, "duration": 581.9, "instruction": "Keep right onto Farrer Underpass", "name": "Farrer Underpass", "type": 13, "way_points": [126, 213]}, {"distance": 542.3, "duration": 90.5, "instruction": "Keep left onto Lornie Road", "name": "Lornie Road", "type": 12, "way_points": [213, 226]}, {"distance": 203.0, "duration": 37.4, "instruction": "Turn right onto Thomson Road", "name": "Thomson Road", "type": 1, "way_points": [226, 231]}, {"distance": 107.3, "duration": 25.8, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [231, 235]}, {"distance": 39.4, "duration": 9.5, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [235, 236]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the right", "name": "-", "type": 10, "way_points": [236, 236]}]}], "summary": {"distance": 12205.9, "duration": 1524.2}, "way_points": [0, 236]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.800215758536, 1.27749904086527], [103.837774442377, 1.34149897479709]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886701381}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_3a9400fafa806e28ac896ed2f00dcba7.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_ee439083d8205047e0f36608eada4ddb_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_ee439083d8205047e0f36608eada4ddb_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ee439083d8205047e0f36608eada4ddb = L.geoJson(null, {
+                onEachFeature: geo_json_ee439083d8205047e0f36608eada4ddb_onEachFeature,
+            
+                style: geo_json_ee439083d8205047e0f36608eada4ddb_styler,
+            ...{
+}
+        });
+
+        function geo_json_ee439083d8205047e0f36608eada4ddb_add (data) {
+            geo_json_ee439083d8205047e0f36608eada4ddb
+                .addData(data);
+        }
+            geo_json_ee439083d8205047e0f36608eada4ddb_add({"bbox": [103.837784, 1.340699, 103.837784, 1.340699], "features": [{"bbox": [103.837784, 1.340699, 103.837784, 1.340699], "geometry": {"coordinates": [[103.837784, 1.340699]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 0.0, "duration": 0.0, "steps": [{"distance": 0.0, "duration": 0.0, "instruction": "Head east", "name": "-", "type": 11, "way_points": [0, 0]}]}], "summary": {}, "way_points": [0, 0]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.837774442377, 1.34149897479709], [103.837774442377, 1.34149897479709]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886703736}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_ee439083d8205047e0f36608eada4ddb.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+        function geo_json_e1a0a226672a8b4c0633535f2bf365dc_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "blue", "opacity": 0.7, "weight": 3};
+            }
+        }
+
+        function geo_json_e1a0a226672a8b4c0633535f2bf365dc_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_e1a0a226672a8b4c0633535f2bf365dc = L.geoJson(null, {
+                onEachFeature: geo_json_e1a0a226672a8b4c0633535f2bf365dc_onEachFeature,
+            
+                style: geo_json_e1a0a226672a8b4c0633535f2bf365dc_styler,
+            ...{
+}
+        });
+
+        function geo_json_e1a0a226672a8b4c0633535f2bf365dc_add (data) {
+            geo_json_e1a0a226672a8b4c0633535f2bf365dc
+                .addData(data);
+        }
+            geo_json_e1a0a226672a8b4c0633535f2bf365dc_add({"bbox": [103.836853, 1.33959, 103.849406, 1.348617], "features": [{"bbox": [103.836853, 1.33959, 103.849406, 1.348617], "geometry": {"coordinates": [[103.837784, 1.340699], [103.837816, 1.340346], [103.83754, 1.340374], [103.837326, 1.34038], [103.83713, 1.340385], [103.836853, 1.340368], [103.836943, 1.340227], [103.837085, 1.339985], [103.83721, 1.339744], [103.837462, 1.339604], [103.837546, 1.33959], [103.837685, 1.339625], [103.837973, 1.339732], [103.838871, 1.340377], [103.839084, 1.340559], [103.83919, 1.340705], [103.839267, 1.340847], [103.839335, 1.340992], [103.839381, 1.341143], [103.839423, 1.341354], [103.839387, 1.341792], [103.839369, 1.341891], [103.839219, 1.342162], [103.839079, 1.3427], [103.839079, 1.342837], [103.839111, 1.342924], [103.839169, 1.342983], [103.839469, 1.343122], [103.839589, 1.343209], [103.839869, 1.343555], [103.840037, 1.343858], [103.84011, 1.344194], [103.840112, 1.344348], [103.84004, 1.344664], [103.840096, 1.344712], [103.840185, 1.344789], [103.840519, 1.345005], [103.840847, 1.345119], [103.841091, 1.345182], [103.841327, 1.345218], [103.841697, 1.345221], [103.841886, 1.345192], [103.842087, 1.345143], [103.842411, 1.345005], [103.842902, 1.344769], [103.843135, 1.344665], [103.843613, 1.344426], [103.843911, 1.34431], [103.844152, 1.344237], [103.844356, 1.344194], [103.844835, 1.344124], [103.845113, 1.344113], [103.845403, 1.344121], [103.845809, 1.344146], [103.846069, 1.344196], [103.846232, 1.344312], [103.846329, 1.344481], [103.846377, 1.344638], [103.846405, 1.344864], [103.846502, 1.345356], [103.846703, 1.34624], [103.847, 1.347612], [103.847059, 1.34792], [103.847151, 1.348275], [103.847206, 1.348494], [103.847243, 1.348617], [103.847389, 1.348585], [103.848261, 1.348388], [103.848311, 1.348376], [103.84885, 1.348251], [103.848887, 1.348396], [103.848917, 1.34853], [103.848945, 1.348557], [103.848946, 1.348604], [103.849061, 1.348577], [103.849406, 1.348496]], "type": "LineString"}, "id": "0", "properties": {"segments": [{"distance": 2495.8, "duration": 371.6, "steps": [{"distance": 39.4, "duration": 9.5, "instruction": "Head south", "name": "-", "type": 11, "way_points": [0, 1]}, {"distance": 107.3, "duration": 25.8, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [1, 5]}, {"distance": 80.0, "duration": 19.6, "instruction": "Turn sharp left onto Thomson Road", "name": "Thomson Road", "type": 2, "way_points": [5, 8]}, {"distance": 766.7, "duration": 83.9, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [8, 33]}, {"distance": 431.5, "duration": 62.5, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [33, 46]}, {"distance": 248.9, "duration": 31.3, "instruction": "Keep left onto Braddell Road", "name": "Braddell Road", "type": 12, "way_points": [46, 53]}, {"distance": 544.6, "duration": 73.4, "instruction": "Keep left", "name": "-", "type": 12, "way_points": [53, 65]}, {"distance": 183.3, "duration": 33.1, "instruction": "Turn right onto Bishan Street 11", "name": "Bishan Street 11", "type": 1, "way_points": [65, 69]}, {"distance": 36.2, "duration": 14.6, "instruction": "Turn left", "name": "-", "type": 0, "way_points": [69, 72]}, {"distance": 5.3, "duration": 3.8, "instruction": "Turn slight left", "name": "-", "type": 4, "way_points": [72, 73]}, {"distance": 52.5, "duration": 14.2, "instruction": "Turn right", "name": "-", "type": 1, "way_points": [73, 75]}, {"distance": 0.0, "duration": 0.0, "instruction": "Arrive at your destination, on the left", "name": "-", "type": 10, "way_points": [75, 75]}]}], "summary": {"distance": 2495.8, "duration": 371.6}, "way_points": [0, 75]}, "type": "Feature"}], "metadata": {"attribution": "openrouteservice.org | OpenStreetMap contributors", "engine": {"build_date": "2025-01-27T14:56:02Z", "graph_date": "2025-01-28T09:38:16Z", "version": "9.0.0"}, "query": {"coordinates": [[103.837774442377, 1.34149897479709], [103.84957198305, 1.34862997302065]], "format": "geojson", "profile": "driving-car", "profileName": "driving-car"}, "service": "routing", "timestamp": 1739886706201}, "type": "FeatureCollection"});
+
+        
+    
+            geo_json_e1a0a226672a8b4c0633535f2bf365dc.addTo(map_9996236f088867dace4a20ff702df1b3);
+        
+    
+            map_9996236f088867dace4a20ff702df1b3.fitBounds(
+                [[1.31773583232805, 103.778554439278], [1.32042967079118, 103.843892122244], [1.34205287411841, 103.84939599719], [1.33828365922679, 103.858467966719], [1.32057156550961, 103.843219261065], [1.30370452023703, 103.833200970183], [1.30139880165788, 103.83735915836], [1.30540799634699, 103.835473484406], [1.30654704697701, 103.832128174215], [1.31247326486217, 103.853929522508], [1.30964598900104, 103.857821340639], [1.30097707763182, 103.860481763929], [1.27749904086527, 103.800215758536], [1.34149897479709, 103.837774442377], [1.34149897479709, 103.837774442377], [1.34862997302065, 103.84957198305]],
+                {}
+            );
+        
+</script>
+</html>

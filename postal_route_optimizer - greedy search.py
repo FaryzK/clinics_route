@@ -9,8 +9,6 @@ import os
 from dotenv import load_dotenv
 import requests
 import time  # Add this import at the top
-from sklearn.cluster import KMeans
-from collections import defaultdict
 
 # Load environment variables
 load_dotenv()
@@ -26,8 +24,6 @@ class PostalRouteOptimizer:
         # Initialize geocoding services
         self.geolocator = Nominatim(user_agent="postal_route_optimizer")
         self.ors_client = ors.Client(key=os.getenv('ORS_API_KEY'))
-        # Store coordinates to avoid repeated geocoding
-        self.coord_cache = {}
         
     def geocode_postal(self, postal_code):
         """
@@ -205,94 +201,38 @@ class PostalRouteOptimizer:
         distances = [(code, self.calculate_distance(current, code)) for code in unvisited]
         return min(distances, key=lambda x: x[1])[0]
 
-    def get_coordinates(self, postal_codes):
-        """Get coordinates for all postal codes"""
-        coordinates = []
-        for code in postal_codes:
-            if code not in self.coord_cache:
-                coords = self.geocode_postal(code)
-                if coords:
-                    self.coord_cache[code] = coords
-            if code in self.coord_cache:
-                coordinates.append(self.coord_cache[code])
-        return np.array(coordinates)
-
-    def cluster_postal_codes(self):
-        """Cluster postal codes using K-means"""
-        # Get coordinates for clustering
-        coords = self.get_coordinates(self.postal_codes)
-        
-        if len(coords) < self.num_groups:
-            return {0: self.postal_codes}  # Return single cluster if too few points
-            
-        # Perform K-means clustering
-        kmeans = KMeans(n_clusters=self.num_groups, random_state=42)
-        cluster_labels = kmeans.fit_predict(coords)
-        
-        # Group postal codes by cluster
-        clusters = defaultdict(list)
-        for postal_code, label in zip(self.postal_codes, cluster_labels):
-            clusters[label].append(postal_code)
-            
-        return clusters
-
-    def optimize_cluster_route(self, cluster_codes, start_postal):
-        """Optimize route within a cluster using nearest neighbor"""
-        if not cluster_codes:
-            return []
-            
-        route = []
-        unvisited = set(cluster_codes)
-        current = start_postal
-        
-        while unvisited:
-            if current in unvisited:
-                unvisited.remove(current)
-            route.append(current)
-            
-            if not unvisited:
-                break
-                
-            # Find nearest unvisited postal code
-            current = min(
-                unvisited,
-                key=lambda x: self.calculate_distance(current, x)
-            )
-            
-        return route
-
     def optimize_route(self, start_postal):
         """
-        Optimize routes using clustering and nearest neighbor:
-        1. Cluster postal codes into groups
-        2. For each cluster:
-           - Find nearest postal code to start_postal
-           - Optimize route within cluster
-        3. Return optimized routes
+        Creates optimized routes by:
+        1. Starting from given postal code
+        2. Finding nearest unvisited postal code
+        3. Grouping into specified size
+        4. Repeating until all codes are assigned
         """
-        self.start_postal = start_postal
-        
-        # Get clusters
-        clusters = self.cluster_postal_codes()
+        self.start_postal = start_postal  # Store for map creation
+        # Create a copy of postal codes to work with
+        remaining = self.postal_codes.copy()
+        if start_postal in remaining:
+            remaining.remove(start_postal)
+            
+        # Initialize result structure
         routes = []
         
-        # Process each cluster
-        for cluster_codes in clusters.values():
-            # Find nearest code to start_postal in this cluster
-            cluster_start = min(
-                cluster_codes,
-                key=lambda x: self.calculate_distance(start_postal, x)
-            )
+        # While we have postal codes to process
+        while remaining:
+            # Start a new group
+            current_group = []
+            current = start_postal
             
-            # Optimize route within cluster
-            cluster_route = self.optimize_cluster_route(cluster_codes, cluster_start)
+            # Fill the group up to group_size
+            while len(current_group) < self.group_size and remaining:
+                next_postal = self.find_nearest_unvisited(current, remaining)
+                current_group.append(next_postal)
+                remaining.remove(next_postal)
+                current = next_postal
             
-            # Split into groups of appropriate size if needed
-            for i in range(0, len(cluster_route), self.group_size):
-                route_segment = cluster_route[i:i + self.group_size]
-                if route_segment:
-                    routes.append(route_segment)
-        
+            routes.append(current_group)
+            
         return routes
 
 def get_user_input():
@@ -315,11 +255,11 @@ def get_user_input():
         except Exception as e:
             print(f"Error reading file: {str(e)}")
     
-    # Get number of routes (instead of group size)
+    # Get group size
     while True:
         try:
-            num_routes = int(input("\nEnter number of routes: "))
-            if num_routes > 0:
+            group_size = int(input("\nEnter group size (e.g., 5): "))
+            if group_size > 0:
                 break
             print("Please enter a positive number")
         except ValueError:
@@ -332,19 +272,19 @@ def get_user_input():
             break
         print("Starting postal code cannot be empty")
     
-    return postal_codes, num_routes, start_postal
+    return postal_codes, group_size, start_postal
 
 def main():
     # Get input from user
-    postal_codes, num_routes, start_postal = get_user_input()
+    postal_codes, group_size, start_postal = get_user_input()
     
     # Validate inputs
     if not postal_codes:
         print("Error: No postal codes provided")
         return
     
-    # Create optimizer instance with number of routes
-    optimizer = PostalRouteOptimizer(postal_codes, num_groups=num_routes)
+    # Create optimizer instance
+    optimizer = PostalRouteOptimizer(postal_codes, num_groups=group_size)
     
     # Get optimized routes
     routes = optimizer.optimize_route(start_postal)
@@ -352,12 +292,12 @@ def main():
     # Print results
     print("\n=== Optimized Routes ===")
     print(f"Starting from: {start_postal}")
-    print(f"Number of routes: {num_routes}")
+    print(f"Group size: {group_size}")
     print(f"Total postal codes: {len(postal_codes)}")
-    print(f"Actual routes created: {len(routes)}\n")
+    print(f"Number of days: {len(routes)}\n")
     
     for i, route in enumerate(routes, 1):
-        print(f"\nRoute {i}:")
+        print(f"\nDay {i}:")
         print("Route:", " -> ".join(route))
 
 if __name__ == "__main__":

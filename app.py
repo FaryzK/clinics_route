@@ -28,11 +28,11 @@ def optimize():
         postal_codes = [code.strip() for code in postal_codes if code.strip()]
         postal_codes = list(dict.fromkeys(postal_codes))  # Remove duplicates
         
-        group_size = int(data['group_size'])
+        num_groups = int(data['num_groups'])
         start_postal = data['start_postal'].strip()
 
-        # Create optimizer and generate routes
-        optimizer = PostalRouteOptimizer(postal_codes, group_size=group_size)
+        # Create optimizer with number of groups instead of group size
+        optimizer = PostalRouteOptimizer(postal_codes, num_groups=num_groups)
         routes = optimizer.optimize_route(start_postal)
 
         # Store in session for later use when switching between routes

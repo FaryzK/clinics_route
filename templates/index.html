@@ -187,9 +187,9 @@
         }
 
         .status {
-            padding: 8px 12px;
+            padding: 12px 16px;
             border-radius: 6px;
-            margin-bottom: 16px;
+            margin: 16px 0;
             display: none;
         }
 
@@ -370,6 +370,12 @@
         .map-loading.active {
             display: flex;
         }
+
+        .postal-count {
+            margin-top: 4px;
+            font-size: 0.9em;
+            color: #6e6e73;
+        }
     </style>
 </head>
 <body>
@@ -389,11 +395,21 @@
             <div class="input-content" id="input-content">
                 <div class="input-group">
                     <label for="postal_codes">Postal Codes (one per line)</label>
-                    <textarea id="postal_codes" placeholder="Enter postal codes here..."></textarea>
+                    <textarea 
+                        id="postal_codes" 
+                        placeholder="Enter postal codes here..."
+                        onkeyup="updatePostalCount()"
+                    ></textarea>
+                    <div class="postal-count" id="postal-count">0 postal codes</div>
                 </div>
                 <div class="input-group">
-                    <label for="group_size">Group Size</label>
-                    <input type="number" id="group_size" value="5" min="1">
+                    <label for="num_groups">Number of Routes</label>
+                    <input 
+                        type="number" 
+                        id="num_groups" 
+                        min="1" 
+                        placeholder="Enter desired number of routes"
+                    >
                 </div>
                 <div class="input-group">
                     <label for="start_postal">Starting Postal Code</label>
@@ -473,7 +489,7 @@
             
             const btn = document.getElementById('optimize-btn');
             const postal_codes = document.getElementById('postal_codes').value.trim();
-            const group_size = document.getElementById('group_size').value;
+            const num_groups = document.getElementById('num_groups').value;
             const start_postal = document.getElementById('start_postal').value.trim();
 
             // Validation
@@ -485,6 +501,10 @@
                 updateStatus('Please enter a starting postal code', 'error');
                 return;
             }
+            if (num_groups < 1) {
+                updateStatus('Please enter a valid number of routes', 'error');
+                return;
+            }
 
             try {
                 isProcessing = true;
@@ -494,7 +514,11 @@
                 const response = await fetch('/optimize', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ postal_codes, group_size, start_postal })
+                    body: JSON.stringify({ 
+                        postal_codes, 
+                        num_groups,
+                        start_postal 
+                    })
                 });
                 
                 const data = await response.json();
@@ -627,6 +651,18 @@
             } catch (error) {
                 updateStatus('Error exporting CSV', 'error');
             }
+        }
+
+        function updatePostalCount() {
+            const textarea = document.getElementById('postal_codes');
+            const countDisplay = document.getElementById('postal-count');
+            
+            // Count non-empty lines
+            const count = textarea.value.split('\n')
+                .filter(line => line.trim().length > 0)
+                .length;
+                
+            countDisplay.textContent = `${count} postal code${count === 1 ? '' : 's'}`;
         }
     </script>
 </body>

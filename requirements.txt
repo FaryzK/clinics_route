@@ -5,3 +5,4 @@ geopy>=2.2.0
 openrouteservice>=2.3.3
 python-dotenv>=0.19.0
 requests>=2.26.0
+scikit-learn>=1.0.2
