@@ -5,6 +5,13 @@ import os
 
 app = Flask(__name__)
 
+# Store the current optimizer and routes in memory
+current_session = {
+    'optimizer': None,
+    'routes': None,
+    'start_postal': None
+}
+
 @app.route('/', methods=['GET'])
 def home():
     return render_template('index.html')
@@ -27,6 +34,11 @@ def optimize():
         optimizer = PostalRouteOptimizer(postal_codes, group_size=group_size)
         routes = optimizer.optimize_route(start_postal)
 
+        # Store current session
+        current_session['optimizer'] = optimizer
+        current_session['routes'] = routes
+        current_session['start_postal'] = start_postal
+
         # Create map for first route
         if routes:
             route_map = optimizer.create_route_map(routes[0])
@@ -47,6 +59,42 @@ def optimize():
             'total_days': len(routes),
             'map_filename': map_filename
         })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        })
+
+@app.route('/get_route_map', methods=['POST'])
+def get_route_map():
+    try:
+        data = request.json
+        route_index = int(data['route_index'])
+        
+        if (current_session['optimizer'] is None or 
+            current_session['routes'] is None or 
+            route_index >= len(current_session['routes'])):
+            raise ValueError("No valid route data available")
+
+        # Create map for selected route
+        route_map = current_session['optimizer'].create_route_map(
+            current_session['routes'][route_index]
+        )
+        
+        if route_map:
+            _, map_path = tempfile.mkstemp(suffix='.html', dir='static')
+            map_filename = os.path.basename(map_path)
+            route_map.save(f'static/{map_filename}')
+            return jsonify({
+                'success': True,
+                'map_filename': map_filename
+            })
+        else:
+            return jsonify({
+                'success': False,
+                'error': "Failed to create route map"
+            })
+            
     except Exception as e:
         return jsonify({
             'success': False,
