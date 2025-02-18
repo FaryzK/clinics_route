@@ -114,6 +114,10 @@
             width: 100%;
             font-weight: 500;
             transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
 
         button:hover {
@@ -133,7 +137,6 @@
             border-radius: 50%;
             border-top-color: white;
             animation: spin 1s ease-in-out infinite;
-            margin-right: 8px;
         }
 
         @keyframes spin {
@@ -376,6 +379,49 @@
             font-size: 0.9em;
             color: #6e6e73;
         }
+
+        .progress-container {
+            margin-top: 16px;
+        }
+
+        .progress-phase {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .phase-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #6e6e73;
+        }
+
+        .phase-indicator.active {
+            color: #1d1d1f;
+        }
+
+        .phase-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #d2d2d7;
+        }
+
+        .phase-indicator.active .phase-dot {
+            background-color: #0071e3;
+            animation: pulse 1.5s infinite;
+        }
+
+        .phase-indicator.completed .phase-dot {
+            background-color: #34c759;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
@@ -419,6 +465,21 @@
                     <span>Optimize Routes</span>
                 </button>
                 <div id="status" class="status"></div>
+            </div>
+        </div>
+
+        <div class="progress-container" id="progress-container" style="display: none;">
+            <div class="progress-status">
+                <div class="progress-phase">
+                    <div class="phase-indicator" id="geocoding-phase">
+                        <div class="phase-dot"></div>
+                        <span>Geocoding postal codes...</span>
+                    </div>
+                    <div class="phase-indicator" id="processing-phase">
+                        <div class="phase-dot"></div>
+                        <span>Optimizing routes...</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -488,6 +549,9 @@
             if (isProcessing) return;
             
             const btn = document.getElementById('optimize-btn');
+            const progressContainer = document.getElementById('progress-container');
+            const geocodingPhase = document.getElementById('geocoding-phase');
+            const processingPhase = document.getElementById('processing-phase');
             const postal_codes = document.getElementById('postal_codes').value.trim();
             const num_groups = document.getElementById('num_groups').value;
             const start_postal = document.getElementById('start_postal').value.trim();
@@ -511,6 +575,10 @@
                 btn.disabled = true;
                 btn.innerHTML = '<div class="loading"></div><span>Processing...</span>';
                 
+                // Show progress container
+                progressContainer.style.display = 'block';
+                geocodingPhase.classList.add('active');
+                
                 const response = await fetch('/optimize', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -524,6 +592,11 @@
                 const data = await response.json();
                 
                 if (data.success) {
+                    // Update progress indicators
+                    geocodingPhase.classList.remove('active');
+                    geocodingPhase.classList.add('completed');
+                    processingPhase.classList.add('active');
+                    
                     // Collapse input section
                     const inputContent = document.getElementById('input-content');
                     inputContent.classList.add('collapsed');
@@ -565,6 +638,17 @@
                     if (data.map_filename) {
                         document.getElementById('route-map').src = `/static/${data.map_filename}`;
                     }
+
+                    // Complete progress indicators
+                    processingPhase.classList.remove('active');
+                    processingPhase.classList.add('completed');
+                    
+                    // Hide progress after a delay
+                    setTimeout(() => {
+                        progressContainer.style.display = 'none';
+                        geocodingPhase.classList.remove('completed');
+                        processingPhase.classList.remove('completed');
+                    }, 2000);
                 } else {
                     document.getElementById('results-section').style.display = 'none';
                     document.getElementById('map-section').style.display = 'none';
@@ -575,6 +659,7 @@
                 document.getElementById('results-section').style.display = 'none';
                 document.getElementById('map-section').style.display = 'none';
                 
+                progressContainer.style.display = 'none';
                 updateStatus('An error occurred while processing', 'error');
             } finally {
                 isProcessing = false;

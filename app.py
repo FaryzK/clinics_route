@@ -10,7 +10,8 @@ app = Flask(__name__)
 current_session = {
     'optimizer': None,
     'routes': None,
-    'start_postal': None
+    'start_postal': None,
+    'status': None
 }
 
 # Main route - serves the web interface
@@ -30,8 +31,12 @@ def optimize():
         num_groups = int(data['num_groups'])
         start_postal = data['start_postal'].strip()
 
-        # Create optimizer with number of groups instead of group size
+        # First phase - Geocoding
+        current_session['status'] = 'geocoding'
         optimizer = PostalRouteOptimizer(postal_codes, num_groups=num_groups)
+        
+        # Second phase - Route Processing
+        current_session['status'] = 'processing'
         routes = optimizer.optimize_route(start_postal)
 
         # Store in session for later use when switching between routes
