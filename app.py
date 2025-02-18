@@ -5,45 +5,46 @@ import os
 
 app = Flask(__name__)
 
-# Store the current optimizer and routes in memory
+# Global storage to maintain state between requests
+# Stores the current optimizer instance and route data
 current_session = {
     'optimizer': None,
     'routes': None,
     'start_postal': None
 }
 
+# Main route - serves the web interface
 @app.route('/', methods=['GET'])
 def home():
     return render_template('index.html')
 
+# API endpoint for optimizing routes
 @app.route('/optimize', methods=['POST'])
 def optimize():
     try:
-        # Get data from request
+        # Get and clean input data from the POST request
         data = request.json
-        
-        # Clean and deduplicate postal codes
         postal_codes = data['postal_codes'].split('\n')
-        postal_codes = [code.strip() for code in postal_codes if code.strip()]  # Remove empty lines and whitespace
-        postal_codes = list(dict.fromkeys(postal_codes))  # Remove duplicates while preserving order
+        postal_codes = [code.strip() for code in postal_codes if code.strip()]
+        postal_codes = list(dict.fromkeys(postal_codes))  # Remove duplicates
         
         group_size = int(data['group_size'])
         start_postal = data['start_postal'].strip()
 
-        # Create optimizer and get routes
+        # Create optimizer and generate routes
         optimizer = PostalRouteOptimizer(postal_codes, group_size=group_size)
         routes = optimizer.optimize_route(start_postal)
 
-        # Store current session
+        # Store in session for later use when switching between routes
         current_session['optimizer'] = optimizer
         current_session['routes'] = routes
         current_session['start_postal'] = start_postal
 
-        # Create map for first route
+        # Generate map for the first route
         if routes:
             route_map = optimizer.create_route_map(routes[0])
             if route_map:
-                # Save map to temporary file
+                # Save map as temporary HTML file
                 _, map_path = tempfile.mkstemp(suffix='.html', dir='static')
                 map_filename = os.path.basename(map_path)
                 route_map.save(f'static/{map_filename}')
@@ -52,6 +53,7 @@ def optimize():
         else:
             map_filename = None
 
+        # Return JSON response with all route data
         return jsonify({
             'success': True,
             'routes': routes,
@@ -65,23 +67,26 @@ def optimize():
             'error': str(e)
         })
 
+# API endpoint for getting maps of specific routes
 @app.route('/get_route_map', methods=['POST'])
 def get_route_map():
     try:
         data = request.json
         route_index = int(data['route_index'])
         
+        # Validate that we have route data available
         if (current_session['optimizer'] is None or 
             current_session['routes'] is None or 
             route_index >= len(current_session['routes'])):
             raise ValueError("No valid route data available")
 
-        # Create map for selected route
+        # Generate new map for selected route
         route_map = current_session['optimizer'].create_route_map(
             current_session['routes'][route_index]
         )
         
         if route_map:
+            # Save new map as temporary HTML file
             _, map_path = tempfile.mkstemp(suffix='.html', dir='static')
             map_filename = os.path.basename(map_path)
             route_map.save(f'static/{map_filename}')
@@ -102,6 +107,5 @@ def get_route_map():
         })
 
 if __name__ == '__main__':
-    # Create static folder if it doesn't exist
     os.makedirs('static', exist_ok=True)
     app.run(debug=True) 

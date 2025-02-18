@@ -12,17 +12,23 @@ import requests
 # Load environment variables
 load_dotenv()
 
+# Main class that handles route optimization and map generation
 class PostalRouteOptimizer:
     def __init__(self, postal_codes, group_size=5):
+        # Initialize with list of postal codes and desired group size
         self.postal_codes = postal_codes
         self.group_size = group_size
         self.num_groups = ceil(len(postal_codes) / group_size)
+        # Initialize geocoding services
         self.geolocator = Nominatim(user_agent="postal_route_optimizer")
-        # Get API key from environment variable
         self.ors_client = ors.Client(key=os.getenv('ORS_API_KEY'))
         
     def geocode_postal(self, postal_code):
-        """Convert Singapore postal code to coordinates using OneMap API"""
+        """
+        Converts postal codes to coordinates using:
+        1. OneMap API (Singapore's official service)
+        2. Fallback to Nominatim if OneMap fails
+        """
         # Try OneMap API first (Singapore's official geocoding service)
         try:
             # Use HTTPS URL and verify SSL
@@ -80,7 +86,13 @@ class PostalRouteOptimizer:
         return None
 
     def create_route_map(self, route):
-        """Create a folium map for a given route"""
+        """
+        Creates an interactive map showing:
+        1. Start point (red marker)
+        2. Each stop (blue markers)
+        3. Route lines between points
+        Uses OpenRouteService for actual driving directions
+        """
         coordinates = []
         print(f"Processing route: {route}")
         
@@ -175,8 +187,10 @@ class PostalRouteOptimizer:
 
     def calculate_distance(self, code1, code2):
         """
-        Calculate distance between Singapore postal codes.
-        First two digits represent the sector code, which is geographically meaningful
+        Calculates "distance" between postal codes based on:
+        1. Sector code (first 2 digits)
+        2. Remaining digits
+        Used for initial route optimization
         """
         # Convert to strings and ensure 6 digits
         code1, code2 = str(code1).zfill(6), str(code2).zfill(6)
@@ -199,11 +213,14 @@ class PostalRouteOptimizer:
         return min(distances, key=lambda x: x[1])[0]
 
     def optimize_route(self, start_postal):
+        """
+        Creates optimized routes by:
+        1. Starting from given postal code
+        2. Finding nearest unvisited postal code
+        3. Grouping into specified size
+        4. Repeating until all codes are assigned
+        """
         self.start_postal = start_postal  # Store for map creation
-        """
-        Optimize routes starting from given postal code
-        Returns list of groups, each containing ordered postal codes for that day
-        """
         # Create a copy of postal codes to work with
         remaining = self.postal_codes.copy()
         if start_postal in remaining:

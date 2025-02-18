@@ -70,6 +70,12 @@
     </div>
 
     <script>
+        // optimize() function:
+        // 1. Collects input data
+        // 2. Sends to server for processing
+        // 3. Updates results and map
+        // 4. Populates route selector
+
         async function optimize() {
             const postal_codes = document.getElementById('postal_codes').value;
             const group_size = document.getElementById('group_size').value;
@@ -121,6 +127,10 @@
             }
         }
 
+        // updateMap() function:
+        // 1. Gets selected route index
+        // 2. Requests new map from server
+        // 3. Updates map display
         async function updateMap() {
             const routeIndex = document.getElementById('route-select').value;
             const response = await fetch('/get_route_map', {
