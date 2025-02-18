@@ -106,6 +106,29 @@ def get_route_map():
             'error': str(e)
         })
 
+# Add this route to app.py
+@app.route('/export_csv', methods=['POST'])
+def export_csv():
+    try:
+        data = request.json
+        routes = data['routes']
+        
+        # Create CSV content with comma-separated postal codes
+        csv_content = "Route Number,Postal Codes\n"
+        for i, route in enumerate(routes, 1):
+            csv_content += f"Route {i},{','.join(route)}\n"  # Changed from ' -> ' to ','
+            
+        return jsonify({
+            'success': True,
+            'csv_content': csv_content,
+            'filename': 'postal_routes.csv'
+        })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        })
+
 if __name__ == '__main__':
     os.makedirs('static', exist_ok=True)
     app.run(debug=True) 

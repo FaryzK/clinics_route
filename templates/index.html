@@ -2,148 +2,630 @@
 <html>
 <head>
     <title>Postal Route Optimizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
+            font-family: 'Inter', sans-serif;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            box-sizing: border-box;
         }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .header h1 {
+            font-weight: 600;
+            color: #1d1d1f;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #6e6e73;
+            margin: 0;
+        }
+
         .container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
         }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            width: 100%;
+            margin: 0;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+            color: #1d1d1f;
+        }
+
         textarea {
             width: 100%;
-            height: 300px;
-            margin-bottom: 10px;
+            height: 200px;
+            padding: 12px;
+            border: 1px solid #d2d2d7;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            resize: vertical;
+            margin-bottom: 16px;
+            transition: border-color 0.2s;
         }
+
+        textarea:focus {
+            outline: none;
+            border-color: #0071e3;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1d1d1f;
+            font-weight: 500;
+        }
+
         input {
             width: 100%;
-            margin-bottom: 10px;
-            padding: 5px;
+            padding: 12px;
+            border: 1px solid #d2d2d7;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s;
         }
+
+        input:focus {
+            outline: none;
+            border-color: #0071e3;
+        }
+
         button {
-            background-color: #4CAF50;
+            background-color: #0071e3;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border: none;
+            border-radius: 8px;
             cursor: pointer;
             width: 100%;
+            font-weight: 500;
+            transition: background-color 0.2s;
         }
+
         button:hover {
-            background-color: #45a049;
+            background-color: #0077ED;
         }
+
+        button:disabled {
+            background-color: #d2d2d7;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .route-selector {
+            margin-bottom: 16px;
+        }
+
+        .route-selector label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1d1d1f;
+            font-weight: 500;
+        }
+
+        .route-selector select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d2d2d7;
+            border-radius: 8px;
+            background-color: white;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9em;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h10L5 6z' fill='%236e6e73'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 10px;
+            padding-right: 32px;
+        }
+
+        .route-selector select:focus {
+            outline: none;
+            border-color: #0071e3;
+        }
+
+        .route-selector select:disabled {
+            background-color: #f5f5f7;
+            cursor: not-allowed;
+        }
+
         #results {
             white-space: pre-wrap;
+            line-height: 1.5;
+            color: #1d1d1f;
         }
+
+        .status {
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .status.success {
+            background-color: #e3f9e5;
+            color: #0c611a;
+            display: block;
+        }
+
+        .status.error {
+            background-color: #ffefef;
+            color: #c11900;
+            display: block;
+        }
+
         .map-container {
-            grid-column: span 1;
+            height: 500px;
+            position: relative;
+        }
+
+        #route-map {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .results-container {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: #6e6e73;
+            cursor: pointer;
+            padding: 4px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 8px;
+        }
+
+        .toggle-btn:hover {
+            color: #1d1d1f;
+        }
+
+        .toggle-icon {
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid currentColor;
+            border-bottom: 2px solid currentColor;
+            transform: rotate(45deg);
+            transition: transform 0.2s ease;
+            display: block;
+            margin-top: -5px;
+        }
+
+        .collapsed .toggle-icon {
+            transform: rotate(-45deg);
+            margin-top: 5px;
+        }
+
+        .results-summary {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #d2d2d7;
+        }
+
+        .results-detail {
+            max-height: 150px;
+            overflow-y: auto;
+            transition: max-height 0.3s ease-out;
+            font-size: 0.9em;
+            line-height: 1.4;
+            padding: 12px;
+            background: #f5f5f7;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+
+        .results-detail.collapsed {
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .export-btn {
+            margin-top: 16px;
+            background-color: #34c759;
+        }
+
+        .export-btn:hover {
+            background-color: #30b753;
+        }
+
+        @media (max-width: 768px) {
+            .results-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .input-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .input-content {
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+            max-height: 1000px;
+        }
+
+        .input-content.collapsed {
+            max-height: 0;
+        }
+
+        .route-input-container {
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        .route-input-container input {
+            width: 100%;
+            padding: 12px;
+            padding-right: 40px;
+            border: 1px solid #d2d2d7;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .route-input-container select {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .map-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #1d1d1f;
+        }
+
+        .loading-spinner {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d2d2d7;
+            border-top-color: #0071e3;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .map-loading.active {
+            display: flex;
         }
     </style>
 </head>
 <body>
-    <h1>Postal Route Optimizer</h1>
+    <div class="header">
+        <h1>Postal Route Optimizer</h1>
+        <p>Optimize your delivery routes efficiently</p>
+    </div>
+
     <div class="container">
-        <div>
-            <h2>Input</h2>
-            <textarea id="postal_codes" placeholder="Paste your postal codes here (one per line)"></textarea>
-            <input type="number" id="group_size" placeholder="Group size (e.g., 5)" value="5">
-            <input type="text" id="start_postal" placeholder="Starting postal code">
-            <button onclick="optimize()">Optimize Routes</button>
-        </div>
-        <div>
-            <h2>Results</h2>
-            <div id="results"></div>
-        </div>
-        <div class="map-container">
-            <h2>Route Map</h2>
-            <div class="route-selector">
-                <label for="route-select">Select Route:</label>
-                <select id="route-select" onchange="updateMap()">
-                    <!-- Options will be populated dynamically -->
-                </select>
+        <div class="card input-card" id="input-section">
+            <div class="input-header">
+                <h2>Input Details</h2>
+                <button class="toggle-btn" onclick="toggleInput()" id="input-toggle">
+                    <span class="toggle-icon"></span>
+                </button>
             </div>
-            <iframe id="route-map" style="width: 100%; height: 400px; border: none;"></iframe>
+            <div class="input-content" id="input-content">
+                <div class="input-group">
+                    <label for="postal_codes">Postal Codes (one per line)</label>
+                    <textarea id="postal_codes" placeholder="Enter postal codes here..."></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="group_size">Group Size</label>
+                    <input type="number" id="group_size" value="5" min="1">
+                </div>
+                <div class="input-group">
+                    <label for="start_postal">Starting Postal Code</label>
+                    <input type="text" id="start_postal" placeholder="Enter starting point">
+                </div>
+                <button onclick="optimize()" id="optimize-btn">
+                    <span>Optimize Routes</span>
+                </button>
+                <div id="status" class="status"></div>
+            </div>
+        </div>
+
+        <div class="results-container" id="results-section" style="display: none;">
+            <div class="card results-card">
+                <div class="results-header">
+                    <h2>Results</h2>
+                    <button class="toggle-btn" onclick="toggleResults()">
+                        <span class="toggle-icon"></span>
+                    </button>
+                </div>
+                <div class="results-summary"></div>
+                <div class="results-detail" id="results"></div>
+                <button onclick="exportToCSV()" class="export-btn">
+                    <span>Export to CSV</span>
+                </button>
+            </div>
+
+            <div class="card map-card" id="map-section">
+                <h2>Route Map</h2>
+                <div class="route-selector">
+                    <label for="route-select">Select Route:</label>
+                    <select id="route-select" onchange="updateMap()" disabled>
+                        <option value="">Select a route...</option>
+                    </select>
+                </div>
+                <div class="map-container">
+                    <iframe id="route-map"></iframe>
+                    <div class="map-loading" id="map-loading">
+                        <div class="loading-spinner"></div>
+                        <span>Calculating route...</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        // optimize() function:
-        // 1. Collects input data
-        // 2. Sends to server for processing
-        // 3. Updates results and map
-        // 4. Populates route selector
+        let isProcessing = false;
+
+        function updateStatus(message, type) {
+            const status = document.getElementById('status');
+            status.textContent = message;
+            status.className = `status ${type}`;
+        }
+
+        function updateSteps(step) {
+            document.querySelectorAll('.progress-step').forEach((el, index) => {
+                if (index + 1 < step) {
+                    el.className = 'progress-step completed';
+                } else if (index + 1 === step) {
+                    el.className = 'progress-step active';
+                } else {
+                    el.className = 'progress-step';
+                }
+            });
+        }
+
+        function toggleInput() {
+            const inputContent = document.getElementById('input-content');
+            const toggleIcon = document.querySelector('#input-toggle .toggle-icon');
+            inputContent.classList.toggle('collapsed');
+            toggleIcon.classList.toggle('collapsed');
+        }
 
         async function optimize() {
-            const postal_codes = document.getElementById('postal_codes').value;
+            if (isProcessing) return;
+            
+            const btn = document.getElementById('optimize-btn');
+            const postal_codes = document.getElementById('postal_codes').value.trim();
             const group_size = document.getElementById('group_size').value;
-            const start_postal = document.getElementById('start_postal').value;
-            
-            const response = await fetch('/optimize', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    postal_codes,
-                    group_size,
-                    start_postal
-                }),
-            });
-            
-            const data = await response.json();
-            const results = document.getElementById('results');
-            const routeSelect = document.getElementById('route-select');
-            
-            if (data.success) {
-                let output = `Total postal codes: ${data.total_codes}\n`;
-                output += `Number of routes: ${data.total_days}\n\n`;
+            const start_postal = document.getElementById('start_postal').value.trim();
+
+            // Validation
+            if (!postal_codes) {
+                updateStatus('Please enter postal codes', 'error');
+                return;
+            }
+            if (!start_postal) {
+                updateStatus('Please enter a starting postal code', 'error');
+                return;
+            }
+
+            try {
+                isProcessing = true;
+                btn.disabled = true;
+                btn.innerHTML = '<div class="loading"></div><span>Processing...</span>';
                 
-                // Clear existing options
-                routeSelect.innerHTML = '';
-                
-                // Add options for each route
-                data.routes.forEach((route, index) => {
-                    output += `Route ${index + 1}:\n`;
-                    output += `${route.join(' -> ')}\n\n`;
-                    
-                    // Add option to select
-                    const option = document.createElement('option');
-                    option.value = index;
-                    option.text = `Route ${index + 1}`;
-                    routeSelect.appendChild(option);
+                const response = await fetch('/optimize', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ postal_codes, group_size, start_postal })
                 });
                 
-                results.textContent = output;
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Collapse input section
+                    const inputContent = document.getElementById('input-content');
+                    inputContent.classList.add('collapsed');
+                    document.querySelector('#input-toggle .toggle-icon').classList.add('collapsed');
+                    
+                    // Store routes for CSV export
+                    window.currentRoutes = data.routes;
+                    
+                    document.getElementById('results-section').style.display = 'block';
+                    document.getElementById('map-section').style.display = 'block';
+                    
+                    updateStatus('Routes optimized successfully!', 'success');
+                    
+                    const routeSelect = document.getElementById('route-select');
+                    routeSelect.innerHTML = '<option value="">Select a route...</option>';
+                    routeSelect.disabled = false;
+                    
+                    // Update summary
+                    const summary = document.querySelector('.results-summary');
+                    summary.innerHTML = `
+                        <div><strong>Total postal codes:</strong> ${data.total_codes}</div>
+                        <div><strong>Number of routes:</strong> ${data.total_days}</div>
+                    `;
+                    
+                    // Update detailed results
+                    let output = '';
+                    data.routes.forEach((route, index) => {
+                        output += `Route ${index + 1}:\n`;
+                        output += `${route.join(' -> ')}\n\n`;
+                        
+                        const option = document.createElement('option');
+                        option.value = index;
+                        option.text = `Route ${index + 1}`;
+                        routeSelect.appendChild(option);
+                    });
+                    
+                    document.getElementById('results').textContent = output;
 
-                // Update map with first route
-                if (data.map_filename) {
-                    document.getElementById('route-map').src = `/static/${data.map_filename}`;
+                    if (data.map_filename) {
+                        document.getElementById('route-map').src = `/static/${data.map_filename}`;
+                    }
+                } else {
+                    document.getElementById('results-section').style.display = 'none';
+                    document.getElementById('map-section').style.display = 'none';
+                    
+                    updateStatus(`Error: ${data.error}`, 'error');
                 }
-            } else {
-                results.textContent = `Error: ${data.error}`;
+            } catch (error) {
+                document.getElementById('results-section').style.display = 'none';
+                document.getElementById('map-section').style.display = 'none';
+                
+                updateStatus('An error occurred while processing', 'error');
+            } finally {
+                isProcessing = false;
+                btn.disabled = false;
+                btn.innerHTML = '<span>Optimize Routes</span>';
             }
         }
 
-        // updateMap() function:
-        // 1. Gets selected route index
-        // 2. Requests new map from server
-        // 3. Updates map display
         async function updateMap() {
-            const routeIndex = document.getElementById('route-select').value;
-            const response = await fetch('/get_route_map', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ route_index: parseInt(routeIndex) }),
-            });
+            const routeSelect = document.getElementById('route-select');
+            const routeIndex = routeSelect.value;
+            const mapLoading = document.getElementById('map-loading');
             
-            const data = await response.json();
-            if (data.success && data.map_filename) {
-                document.getElementById('route-map').src = `/static/${data.map_filename}`;
+            if (!routeIndex) return;
+            
+            routeSelect.disabled = true;
+            mapLoading.classList.add('active');
+            
+            try {
+                const response = await fetch('/get_route_map', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ route_index: parseInt(routeIndex) })
+                });
+                
+                const data = await response.json();
+                if (data.success && data.map_filename) {
+                    document.getElementById('route-map').src = `/static/${data.map_filename}`;
+                }
+            } catch (error) {
+                updateStatus('Failed to update map', 'error');
+            } finally {
+                routeSelect.disabled = false;
+                mapLoading.classList.remove('active');
+            }
+        }
+
+        function toggleResults() {
+            const resultsDetail = document.getElementById('results');
+            const toggleIcon = document.querySelector('.toggle-icon');
+            resultsDetail.classList.toggle('collapsed');
+            toggleIcon.classList.toggle('collapsed');
+        }
+
+        async function exportToCSV() {
+            if (!window.currentRoutes) return;
+            
+            try {
+                const response = await fetch('/export_csv', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ routes: window.currentRoutes })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Create and download CSV file
+                    const blob = new Blob([data.csv_content], { type: 'text/csv' });
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = data.filename;
+                    
+                    document.body.appendChild(a);
+                    a.click();
+                    
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                } else {
+                    updateStatus('Failed to export CSV', 'error');
+                }
+            } catch (error) {
+                updateStatus('Error exporting CSV', 'error');
             }
         }
     </script>
