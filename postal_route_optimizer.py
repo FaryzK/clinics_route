@@ -9,13 +9,23 @@ class PostalRouteOptimizer:
         
     def calculate_distance(self, code1, code2):
         """
-        Simple distance calculation between postal codes.
-        This is a basic implementation - you can enhance it based on your postal code format
+        Calculate distance between Singapore postal codes.
+        First two digits represent the sector code, which is geographically meaningful
         """
-        # Convert to strings to handle numeric postal codes
-        code1, code2 = str(code1), str(code2)
-        # Simple difference calculation - can be customized based on your postal code format
-        return sum(abs(ord(a) - ord(b)) for a, b in zip(code1.zfill(6), code2.zfill(6)))
+        # Convert to strings and ensure 6 digits
+        code1, code2 = str(code1).zfill(6), str(code2).zfill(6)
+        
+        # Get sector codes (first 2 digits)
+        sector1 = code1[:2]
+        sector2 = code2[:2]
+        
+        # Calculate primary distance based on sector difference
+        sector_distance = abs(int(sector1) - int(sector2)) * 100
+        
+        # Add secondary distance based on remaining digits
+        remaining_distance = sum(abs(int(a) - int(b)) for a, b in zip(code1[2:], code2[2:]))
+        
+        return sector_distance + remaining_distance
 
     def find_nearest_unvisited(self, current, unvisited):
         """Find the nearest unvisited postal code to the current one"""
