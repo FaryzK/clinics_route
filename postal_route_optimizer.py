@@ -1,12 +1,178 @@
 import numpy as np
 from math import ceil
+import folium
+from geopy.geocoders import Nominatim
+from geopy.exc import GeocoderTimedOut
+import openrouteservice as ors
+from openrouteservice import convert
+import os
+from dotenv import load_dotenv
+import requests
+
+# Load environment variables
+load_dotenv()
 
 class PostalRouteOptimizer:
     def __init__(self, postal_codes, group_size=5):
         self.postal_codes = postal_codes
         self.group_size = group_size
         self.num_groups = ceil(len(postal_codes) / group_size)
+        self.geolocator = Nominatim(user_agent="postal_route_optimizer")
+        # Get API key from environment variable
+        self.ors_client = ors.Client(key=os.getenv('ORS_API_KEY'))
         
+    def geocode_postal(self, postal_code):
+        """Convert Singapore postal code to coordinates using OneMap API"""
+        # Try OneMap API first (Singapore's official geocoding service)
+        try:
+            # Use HTTPS URL and verify SSL
+            onemap_url = "https://www.onemap.gov.sg/api/common/elastic/search"
+            params = {
+                'searchVal': postal_code,
+                'returnGeom': 'Y',
+                'getAddrDetails': 'Y'
+            }
+            
+            response = requests.get(
+                onemap_url, 
+                params=params,
+                verify=True,  # Verify SSL certificate
+                timeout=10    # Set timeout
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                if data['results']:
+                    result = data['results'][0]
+                    lat = float(result['LATITUDE'])
+                    lon = float(result['LONGITUDE'])
+                    address = result.get('ADDRESS', 'No address found')
+                    print(f"Found location for {postal_code}: {address}")
+                    return (lat, lon)
+                else:
+                    print(f"No results found for postal code: {postal_code}")
+            else:
+                print(f"OneMap API returned status code: {response.status_code}")
+            
+        except Exception as e:
+            print(f"OneMap API failed for {postal_code}: {str(e)}")
+
+        # If OneMap fails, try using a Singapore postal code geocoding service
+        try:
+            # Format postal code query
+            query = f"Singapore {postal_code}"
+            location = self.geolocator.geocode(
+                query,
+                timeout=10,
+                country_codes="sg",
+                exactly_one=True,
+                view_box=(103.6, 1.1, 104.1, 1.5)  # Singapore bounding box
+            )
+            
+            if location:
+                print(f"Found location for {postal_code} using fallback: {location.address}")
+                return (location.latitude, location.longitude)
+            
+        except Exception as e:
+            print(f"Fallback geocoding failed for {postal_code}: {str(e)}")
+        
+        print(f"All geocoding attempts failed for {postal_code}")
+        return None
+
+    def create_route_map(self, route):
+        """Create a folium map for a given route"""
+        coordinates = []
+        print(f"Processing route: {route}")
+        
+        # Process starting point
+        start_coords = self.geocode_postal(self.start_postal)
+        if start_coords:
+            print(f"Got coordinates for start point {self.start_postal}: {start_coords}")
+            coordinates.append((start_coords, self.start_postal))
+        else:
+            print(f"Failed to get coordinates for start point {self.start_postal}")
+        
+        # Process each stop in the route
+        for i, postal in enumerate(route, 1):
+            coords = self.geocode_postal(postal)
+            if coords:
+                print(f"Got coordinates for stop {i} {postal}: {coords}")
+                coordinates.append((coords, postal))
+            else:
+                print(f"Failed to get coordinates for stop {i} {postal}")
+
+        if len(coordinates) < 2:
+            print("Not enough coordinates to create a route")
+            return None
+
+        # Create map centered on first coordinate
+        m = folium.Map(location=coordinates[0][0], zoom_start=12)
+
+        # Add markers for each point
+        for i, (coords, postal) in enumerate(coordinates):
+            label = f"{'Start' if i == 0 else f'Stop {i}'}: {postal}"
+            folium.Marker(
+                coords,
+                popup=label,
+                tooltip=label,
+                icon=folium.Icon(color='red' if i == 0 else 'blue', icon='info-sign')
+            ).add_to(m)
+
+        # Get route directions between consecutive points
+        for i in range(len(coordinates) - 1):
+            try:
+                coords1 = coordinates[i][0]
+                coords2 = coordinates[i + 1][0]
+                
+                # Debug print for coordinates format
+                print(f"Sending coordinates to ORS: [{coords1[1]}, {coords1[0]}] -> [{coords2[1]}, {coords2[0]}]")
+                
+                try:
+                    # Test ORS API connection
+                    route_coords = self.ors_client.directions(
+                        coordinates=[[coords1[1], coords1[0]], [coords2[1], coords2[0]]],
+                        profile='driving-car',
+                        format='geojson'
+                    )
+                    
+                    if route_coords and 'features' in route_coords and len(route_coords['features']) > 0:
+                        print(f"Successfully got route directions from {coordinates[i][1]} to {coordinates[i+1][1]}")
+                        
+                        # Add route to map
+                        folium.GeoJson(
+                            route_coords,
+                            style_function=lambda x: {
+                                'color': 'blue',
+                                'weight': 3,
+                                'opacity': 0.7
+                            }
+                        ).add_to(m)
+                    else:
+                        raise Exception("No route found in response")
+
+                except Exception as route_error:
+                    print(f"ORS API error: {str(route_error)}")
+                    print("Falling back to straight line...")
+                    # Fallback to straight line
+                    folium.PolyLine(
+                        locations=[coords1, coords2],
+                        weight=2,
+                        color='red',
+                        opacity=0.5,
+                        dash_array='10'
+                    ).add_to(m)
+
+            except Exception as e:
+                print(f"Error creating route between {coordinates[i][1]} and {coordinates[i+1][1]}: {str(e)}")
+                continue
+
+        # Fit map bounds to include all points
+        if len(coordinates) > 1:
+            bounds = [coords[0] for coords in coordinates]
+            m.fit_bounds(bounds)
+
+        return m
+
     def calculate_distance(self, code1, code2):
         """
         Calculate distance between Singapore postal codes.
@@ -33,6 +199,7 @@ class PostalRouteOptimizer:
         return min(distances, key=lambda x: x[1])[0]
 
     def optimize_route(self, start_postal):
+        self.start_postal = start_postal  # Store for map creation
         """
         Optimize routes starting from given postal code
         Returns list of groups, each containing ordered postal codes for that day

@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 from postal_route_optimizer import PostalRouteOptimizer
+import tempfile
+import os
 
 app = Flask(__name__)
 
@@ -25,12 +27,25 @@ def optimize():
         optimizer = PostalRouteOptimizer(postal_codes, group_size=group_size)
         routes = optimizer.optimize_route(start_postal)
 
+        # Create map for first route
+        if routes:
+            route_map = optimizer.create_route_map(routes[0])
+            if route_map:
+                # Save map to temporary file
+                _, map_path = tempfile.mkstemp(suffix='.html', dir='static')
+                map_filename = os.path.basename(map_path)
+                route_map.save(f'static/{map_filename}')
+            else:
+                map_filename = None
+        else:
+            map_filename = None
+
         return jsonify({
             'success': True,
             'routes': routes,
             'total_codes': len(postal_codes),
             'total_days': len(routes),
-            'duplicates_removed': True
+            'map_filename': map_filename
         })
     except Exception as e:
         return jsonify({
@@ -39,4 +54,6 @@ def optimize():
         })
 
 if __name__ == '__main__':
+    # Create static folder if it doesn't exist
+    os.makedirs('static', exist_ok=True)
     app.run(debug=True) 

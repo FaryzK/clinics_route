@@ -21,6 +21,7 @@ build/
 
 # Environment variables
 .env
+.env.local
 
 # Flask session files
 flask_session/
