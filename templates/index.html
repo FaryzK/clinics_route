@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Postal Route Optimizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            margin-bottom: 10px;
+        }
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #results {
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>Postal Route Optimizer</h1>
+    <div class="container">
+        <div>
+            <h2>Input</h2>
+            <textarea id="postal_codes" placeholder="Paste your postal codes here (one per line)"></textarea>
+            <input type="number" id="group_size" placeholder="Group size (e.g., 5)" value="5">
+            <input type="text" id="start_postal" placeholder="Starting postal code">
+            <button onclick="optimize()">Optimize Routes</button>
+        </div>
+        <div>
+            <h2>Results</h2>
+            <div id="results"></div>
+        </div>
+    </div>
+
+    <script>
+        async function optimize() {
+            const postal_codes = document.getElementById('postal_codes').value;
+            const group_size = document.getElementById('group_size').value;
+            const start_postal = document.getElementById('start_postal').value;
+            
+            const response = await fetch('/optimize', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    postal_codes,
+                    group_size,
+                    start_postal
+                }),
+            });
+            
+            const data = await response.json();
+            const results = document.getElementById('results');
+            
+            if (data.success) {
+                let output = `Total postal codes: ${data.total_codes}\n`;
+                output += `Number of days: ${data.total_days}\n\n`;
+                
+                data.routes.forEach((route, index) => {
+                    output += `Day ${index + 1}:\n`;
+                    output += `Route: ${route.join(' -> ')}\n\n`;
+                });
+                
+                results.textContent = output;
+            } else {
+                results.textContent = `Error: ${data.error}`;
+            }
+        }
+    </script>
+</body>
+</html> 
